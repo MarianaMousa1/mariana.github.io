@@ -1,0 +1,12 @@
+---
+title: "02_cv.Rmd"
+author: "Mariana"
+date: "2024-04-18"
+output: html_document
+---
+
+
+# CV
+```{r CV, echo=F, out.width="100%", out.height=1000}
+knitr::include_graphics("MarianaCV.pdf")
+```
