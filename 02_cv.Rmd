@@ -1,9 +1,3 @@
----
-title: "02_cv.Rmd"
-author: "Mariana"
-date: "2024-04-18"
-output: html_document
----
 
 
 # CV
