@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Projecticum Introductie</title>
-  <meta name="description" content="Page not found | Projecticum Introductie" />
+  <title>10 Dit opdracht wordt de Structured Query Language - or SQL programmeertaal gebruikt voor het beheren van relationele databases. | Projecticum Introductie</title>
+  <meta name="description" content="10 Dit opdracht wordt de Structured Query Language - or SQL programmeertaal gebruikt voor het beheren van relationele databases. | Projecticum Introductie" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Projecticum Introductie" />
+  <meta property="og:title" content="10 Dit opdracht wordt de Structured Query Language - or SQL programmeertaal gebruikt voor het beheren van relationele databases. | Projecticum Introductie" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Projecticum Introductie" />
+  <meta name="twitter:title" content="10 Dit opdracht wordt de Structured Query Language - or SQL programmeertaal gebruikt voor het beheren van relationele databases. | Projecticum Introductie" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="conclusie.html"/>
+<link rel="next" href="covid-19-report-parametrizing-in-rmarkdown.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,19 +228,176 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases." class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Dit opdracht wordt de Structured Query Language - or SQL programmeertaal gebruikt voor het beheren van relationele databases.<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Met SQL wordt verschillende bewerkingen op de flu and dengue data uitgevoerd, zoals het maken en wijzigen van databasestructuren zoals tabellen toevoegen en het manipuleren van gegevens binnen die structuren.</p>
+<div id="data-laden" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Data laden<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#data-laden" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## # A tibble: 6 × 30
+##   Date       Argentina Australia Austria Belgium Bolivia Brazil Bulgaria Canada
+##   &lt;date&gt;         &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;
+## 1 2002-12-29        NA        NA      NA      NA      NA    174       NA     NA
+## 2 2003-01-05        NA        NA      NA      NA      NA    162       NA     NA
+## 3 2003-01-12        NA        NA      NA      NA      NA    174       NA     NA
+## 4 2003-01-19        NA        NA      NA      NA      NA    162       NA     NA
+## 5 2003-01-26        NA        NA      NA      NA      NA    131       NA     NA
+## 6 2003-02-02       136        NA      NA      NA      NA    151       NA     NA
+## # ℹ 21 more variables: Chile &lt;dbl&gt;, France &lt;dbl&gt;, Germany &lt;dbl&gt;, Hungary &lt;dbl&gt;,
+## #   Japan &lt;dbl&gt;, Mexico &lt;dbl&gt;, Netherlands &lt;dbl&gt;, `New Zealand` &lt;dbl&gt;,
+## #   Norway &lt;dbl&gt;, Paraguay &lt;dbl&gt;, Peru &lt;dbl&gt;, Poland &lt;dbl&gt;, Romania &lt;dbl&gt;,
+## #   Russia &lt;dbl&gt;, `South Africa` &lt;dbl&gt;, Spain &lt;dbl&gt;, Sweden &lt;dbl&gt;,
+## #   Switzerland &lt;dbl&gt;, Ukraine &lt;dbl&gt;, `United States` &lt;dbl&gt;, Uruguay &lt;dbl&gt;</code></pre>
+<pre><code>## # A tibble: 6 × 11
+##   Date       Argentina Bolivia Brazil India Indonesia Mexico Philippines
+##   &lt;date&gt;         &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;
+## 1 2002-12-29        NA   0.101  0.073 0.062     0.101 NA              NA
+## 2 2003-01-05        NA   0.143  0.098 0.047     0.039 NA              NA
+## 3 2003-01-12        NA   0.176  0.119 0.051     0.059  0.071          NA
+## 4 2003-01-19        NA   0.173  0.17  0.032     0.039  0.052          NA
+## 5 2003-01-26        NA   0.146  0.138 0.04      0.112  0.048          NA
+## 6 2003-02-02        NA   0.16   0.202 0.038     0.049  0.041          NA
+## # ℹ 3 more variables: Singapore &lt;dbl&gt;, Thailand &lt;dbl&gt;, Venezuela &lt;dbl&gt;</code></pre>
+<pre><code>##               country year infant_mortality life_expectancy fertility
+## 1             Albania 1960           115.40           62.87      6.19
+## 2             Algeria 1960           148.20           47.50      7.65
+## 3              Angola 1960           208.00           35.98      7.32
+## 4 Antigua and Barbuda 1960               NA           62.97      4.43
+## 5           Argentina 1960            59.87           65.39      3.11
+## 6             Armenia 1960               NA           66.86      4.55
+##   population          gdp continent          region
+## 1    1636054           NA    Europe Southern Europe
+## 2   11124892  13828152297    Africa Northern Africa
+## 3    5270844           NA    Africa   Middle Africa
+## 4      54681           NA  Americas       Caribbean
+## 5   20619075 108322326649  Americas   South America
+## 6    1867396           NA      Asia    Western Asia</code></pre>
+</div>
+<div id="data-tidy-maken" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Data Tidy maken<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#data-tidy-maken" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## # A tibble: 6 × 3
+##   Date       country   aantal_flu
+##   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
+## 1 2002-12-29 Argentina         NA
+## 2 2002-12-29 Australia         NA
+## 3 2002-12-29 Austria           NA
+## 4 2002-12-29 Belgium           NA
+## 5 2002-12-29 Bolivia           NA
+## 6 2002-12-29 Brazil           174</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##    year country   aantal_flu
+##   &lt;int&gt; &lt;fct&gt;          &lt;dbl&gt;
+## 1  2002 Argentina         NA
+## 2  2002 Australia         NA
+## 3  2002 Austria           NA
+## 4  2002 Belgium           NA
+## 5  2002 Bolivia           NA
+## 6  2002 Brazil           174</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##   Date       country   aantal_dengue
+##   &lt;date&gt;     &lt;chr&gt;             &lt;dbl&gt;
+## 1 2002-12-29 Argentina        NA    
+## 2 2002-12-29 Bolivia           0.101
+## 3 2002-12-29 Brazil            0.073
+## 4 2002-12-29 India             0.062
+## 5 2002-12-29 Indonesia         0.101
+## 6 2002-12-29 Mexico           NA</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##    year country   aantal_dengue
+##   &lt;int&gt; &lt;fct&gt;             &lt;dbl&gt;
+## 1  2002 Argentina        NA    
+## 2  2002 Bolivia           0.101
+## 3  2002 Brazil            0.073
+## 4  2002 India             0.062
+## 5  2002 Indonesia         0.101
+## 6  2002 Mexico           NA</code></pre>
+</div>
+<div id="een-nieuwe-postgresql-database-maken-onder-de-naam-workflowsdb-in-dbeaver" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Een nieuwe PostgreSQL database maken onder de naam “workflowsdb” in Dbeaver<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#een-nieuwe-postgresql-database-maken-onder-de-naam-workflowsdb-in-dbeaver" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hier moet de gebruiker zijn eigen gegevens invullen</p>
+</div>
+<div id="sql-script" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> ## SQL script<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#sql-script" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>– Inspecteer de inhoud van de data_flu_tidy tabel
+SELECT * FROM data_flu_tidy LIMIT 10;</p>
+<p>– Inspecteer de inhoud van de data_dengue_tidy tabel
+SELECT * FROM data_dengue_tidy LIMIT 10;</p>
+<p>– Inspecteer de inhoud van de data_gapminder tabel
+SELECT * FROM data_gapminder LIMIT 10;
+—————————————————————-
+## Data inspectie in Dbeaver
+<img src="images/data_flu_tidy.png" alt="flu data" />
+<img src="images/data_gapminder.png" alt="gap_minder data" />
+<img src="images/data_dengue.png" alt="data_dengue" /><br />
+## Data inspectie in R</p>
+<pre><code>## # A tibble: 6,590 × 3
+##     year country     aantal_dengue
+##    &lt;int&gt; &lt;fct&gt;               &lt;dbl&gt;
+##  1  2002 Argentina          NA    
+##  2  2002 Bolivia             0.101
+##  3  2002 Brazil              0.073
+##  4  2002 India               0.062
+##  5  2002 Indonesia           0.101
+##  6  2002 Mexico             NA    
+##  7  2002 Philippines        NA    
+##  8  2002 Singapore           0.059
+##  9  2002 Thailand           NA    
+## 10  2002 Venezuela          NA    
+## # ℹ 6,580 more rows</code></pre>
+<pre><code>## # A tibble: 19,111 × 3
+##     year country   aantal_flu
+##    &lt;int&gt; &lt;fct&gt;          &lt;dbl&gt;
+##  1  2002 Argentina         NA
+##  2  2002 Australia         NA
+##  3  2002 Austria           NA
+##  4  2002 Belgium           NA
+##  5  2002 Bolivia           NA
+##  6  2002 Brazil           174
+##  7  2002 Bulgaria          NA
+##  8  2002 Canada            NA
+##  9  2002 Chile             NA
+## 10  2002 France            NA
+## # ℹ 19,101 more rows</code></pre>
+<pre><code>## # A tibble: 10,545 × 9
+##    country   year infant_mortality life_expectancy fertility population      gdp
+##    &lt;fct&gt;    &lt;int&gt;            &lt;dbl&gt;           &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+##  1 Albania   1960            115.             62.9      6.19    1636054 NA      
+##  2 Algeria   1960            148.             47.5      7.65   11124892  1.38e10
+##  3 Angola    1960            208              36.0      7.32    5270844 NA      
+##  4 Antigua…  1960             NA              63.0      4.43      54681 NA      
+##  5 Argenti…  1960             59.9            65.4      3.11   20619075  1.08e11
+##  6 Armenia   1960             NA              66.9      4.55    1867396 NA      
+##  7 Aruba     1960             NA              65.7      4.82      54208 NA      
+##  8 Austral…  1960             20.3            70.9      3.45   10292328  9.67e10
+##  9 Austria   1960             37.3            68.8      2.7     7065525  5.24e10
+## 10 Azerbai…  1960             NA              61.3      5.57    3897889 NA      
+## # ℹ 10,535 more rows
+## # ℹ 2 more variables: continent &lt;fct&gt;, region &lt;fct&gt;</code></pre>
+</div>
+<div id="samenvoegen-van-gapminder-flu-en-dengue-data" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> samenvoegen van gapminder, flu en dengue data<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#samenvoegen-van-gapminder-flu-en-dengue-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="de-data-exporteren-naar-dbeaver" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> De data exporteren naar Dbeaver<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#de-data-exporteren-naar-dbeaver" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Joining Gapminder, Flu, and Dengue Data</p>
+<p><img src="images/joined_data.png" alt="joined_data" /><br />
+## Statistics en Visualizatie</p>
+<div class="float">
+<img src="images/dengue_Mexico.png" alt="dengue_Mexico" />
+<div class="figcaption">dengue_Mexico</div>
+</div>
+<p><img src="images/flu_Mexico.png" alt="flu_Mexico" /><br />
+Conclusie
+Dit rapport demonstreert de stappen die betrokken zijn bij het laden, opschonen, opslaan, samenvoegen en analyseren van gegevens met behulp van R en PostgreSQL. Het proces omvat het omzetten van onbewerkte gegevens in overzichtelijke formaten, het opslaan en beheren van gegevens in een relationele database, het uitvoeren van joins om gegevens uit meerdere bronnen te combineren en het genereren van beschrijvende statistieken en visualisaties van dengue en flu gevallen in lannd Mexico om betekenisvolle inzichten te verkrijgen.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="conclusie.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="covid-19-report-parametrizing-in-rmarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

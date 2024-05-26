@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Projecticum Introductie</title>
-  <meta name="description" content="Page not found | Projecticum Introductie" />
+  <title>11 Covid-19 report parametrizing in RMarkdown | Projecticum Introductie</title>
+  <meta name="description" content="11 Covid-19 report parametrizing in RMarkdown | Projecticum Introductie" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Projecticum Introductie" />
+  <meta property="og:title" content="11 Covid-19 report parametrizing in RMarkdown | Projecticum Introductie" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Projecticum Introductie" />
+  <meta name="twitter:title" content="11 Covid-19 report parametrizing in RMarkdown | Projecticum Introductie" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"/>
+<link rel="next" href="rpackage-amrnetherland.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,19 +228,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="covid-19-report-parametrizing-in-rmarkdown" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Covid-19 report parametrizing in RMarkdown<a href="covid-19-report-parametrizing-in-rmarkdown.html#covid-19-report-parametrizing-in-rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introductie-1" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Introductie<a href="covid-19-report-parametrizing-in-rmarkdown.html#introductie-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dit rapport biedt een analyse van COVID-19-gevallen en sterfgevallen voor een bepaald land en jaar. Het rapport is geparametriseerd om flexibiliteit mogelijk te maken bij het selecteren van het land, het jaar en de maanden waarin u geïnteresseerd bent.
+De data is gedownload van European Center for Disease Control (ECDC).</p>
+<p>De originele RMarkdown bestand waar de parameters ingesteld is bewaard in mijn portofolio repository <a href="https://github.com/MarianaMousa1/portofolio.git">link naar repo</a></p>
+</div>
+<div id="load-de-data" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> load de data<a href="covid-19-report-parametrizing-in-rmarkdown.html#load-de-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eerst laden de benodigde libraries en de dataset.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-1" tabindex="-1"></a><span class="co"># libraries</span></span>
+<span id="cb107-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb107-3"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-3" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb107-4"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb107-5"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-5" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb107-6"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-6" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb107-7"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-7" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb107-8"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-8" tabindex="-1"></a></span>
+<span id="cb107-9"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-9" tabindex="-1"></a> <span class="co"># Load the data</span></span>
+<span id="cb107-10"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-10" tabindex="-1"></a>covid_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;doc/parameters_bestanden/data.csv&quot;</span>)</span>
+<span id="cb107-11"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-11" tabindex="-1"></a><span class="fu">colnames</span>(covid_data)</span>
+<span id="cb107-12"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-12" tabindex="-1"></a><span class="fu">head</span>(covid_data)</span>
+<span id="cb107-13"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-13" tabindex="-1"></a></span>
+<span id="cb107-14"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-14" tabindex="-1"></a><span class="co"># Convert dateRep to Date type</span></span>
+<span id="cb107-15"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-15" tabindex="-1"></a>covid_data<span class="sc">$</span>dateRep <span class="ot">&lt;-</span> <span class="fu">dmy</span>(covid_data<span class="sc">$</span>dateRep)</span>
+<span id="cb107-16"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-16" tabindex="-1"></a></span>
+<span id="cb107-17"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-17" tabindex="-1"></a><span class="co"># Print the first few rows of the dataset</span></span>
+<span id="cb107-18"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb107-18" tabindex="-1"></a><span class="fu">head</span>(covid_data)</span></code></pre></div>
+</div>
+<div id="data-filteren-en-gegevens-voorbereiden" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Data filteren en gegevens voorbereiden<a href="covid-19-report-parametrizing-in-rmarkdown.html#data-filteren-en-gegevens-voorbereiden" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Filter de gegevens op basis van de parameters voor het opgegeven land, jaar en periode.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb108-1" tabindex="-1"></a><span class="co"># Access the parameters</span></span>
+<span id="cb108-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb108-2" tabindex="-1"></a>country <span class="ot">&lt;-</span> params<span class="sc">$</span>country</span>
+<span id="cb108-3"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb108-3" tabindex="-1"></a>year <span class="ot">&lt;-</span> params<span class="sc">$</span>year</span>
+<span id="cb108-4"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb108-4" tabindex="-1"></a>months <span class="ot">&lt;-</span> params<span class="sc">$</span>months</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb109-1" tabindex="-1"></a><span class="co"># Filter data based on parameters</span></span>
+<span id="cb109-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb109-2" tabindex="-1"></a>covid_filtered <span class="ot">&lt;-</span> covid_data <span class="sc">%&gt;%</span></span>
+<span id="cb109-3"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb109-3" tabindex="-1"></a>  <span class="fu">filter</span>(countriesAndTerritories <span class="sc">==</span> params<span class="sc">$</span>country <span class="sc">&amp;</span> year <span class="sc">==</span> params<span class="sc">$</span>year <span class="sc">&amp;</span> month <span class="sc">%in%</span> params<span class="sc">$</span>months)</span>
+<span id="cb109-4"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb109-4" tabindex="-1"></a></span>
+<span id="cb109-5"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb109-5" tabindex="-1"></a><span class="fu">head</span>(covid_filtered)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb110-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/parameters_filter.png&quot;</span>)</span></code></pre></div>
+<p><img src="images/parameters_filter.png" width="467" /></p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb111-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;*Figure 1: COVID-19 Cases filter*&quot;</span>) </span></code></pre></div>
+<pre><code>## *Figure 1: COVID-19 Cases filter*</code></pre>
+</div>
+<div id="plotten-maken-voor-covid-19-gevallen-en-sterfgevallen." class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Plotten maken voor COVID-19-gevallen en sterfgevallen.<a href="covid-19-report-parametrizing-in-rmarkdown.html#plotten-maken-voor-covid-19-gevallen-en-sterfgevallen." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-1" tabindex="-1"></a><span class="co"># Plot COVID-19 cases</span></span>
+<span id="cb113-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-2" tabindex="-1"></a>cases_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(covid_filtered, <span class="fu">aes</span>(<span class="at">x =</span> dateRep, <span class="at">y =</span> cases)) <span class="sc">+</span></span>
+<span id="cb113-3"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;green&quot;</span>) <span class="sc">+</span></span>
+<span id="cb113-4"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb113-5"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;COVID-19 gevallen in&quot;</span> , params<span class="sc">$</span>country , params<span class="sc">$</span>months , params<span class="sc">$</span>year , <span class="at">sep =</span> <span class="st">&quot; &quot;</span>),</span>
+<span id="cb113-6"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Date&quot;</span>,</span>
+<span id="cb113-7"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Aantal gevallen&quot;</span>) <span class="sc">+</span></span>
+<span id="cb113-8"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-8" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb113-9"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-9" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb113-10"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-10" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb113-11"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-11" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb113-12"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-12" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>)</span>
+<span id="cb113-13"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-13" tabindex="-1"></a>  )</span>
+<span id="cb113-14"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb113-14" tabindex="-1"></a>cases_plot</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb114-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb114-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb114-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/parameters_COVID_cases_Germany.png&quot;</span>)</span></code></pre></div>
+<p><img src="images/parameters_COVID_cases_Germany.png" width="462" /></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb115-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;*Figure 1: COVID-19 Cases in Germany in maand mei 2021 *&quot;</span>)</span></code></pre></div>
+<pre><code>## *Figure 1: COVID-19 Cases in Germany in maand mei 2021 *</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-1" tabindex="-1"></a><span class="co"># Plot for COVID-19 related deaths</span></span>
+<span id="cb117-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-2" tabindex="-1"></a></span>
+<span id="cb117-3"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-3" tabindex="-1"></a>sterfgevallen <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(covid_filtered, <span class="fu">aes</span>(<span class="at">x =</span> dateRep, <span class="at">y =</span> deaths)) <span class="sc">+</span></span>
+<span id="cb117-4"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-4" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb117-5"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb117-6"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;COVID-19 sterfgevallen in&quot;</span> , params<span class="sc">$</span>country , params<span class="sc">$</span>months , params<span class="sc">$</span>year, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>),</span>
+<span id="cb117-7"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Date&quot;</span>,</span>
+<span id="cb117-8"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Aantal sterfgevallen&quot;</span>) <span class="sc">+</span></span>
+<span id="cb117-9"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb117-10"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-10" tabindex="-1"></a> </span>
+<span id="cb117-11"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb117-11" tabindex="-1"></a>sterfgevallen</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb118-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb118-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb118-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/parameters_COVID_deathes_Germany.png&quot;</span>)</span></code></pre></div>
+<p><img src="images/parameters_COVID_deathes_Germany.png" width="534" /></p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb119-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;*Figure 1: COVID-19 sterfgevallen in Germany in maand mei 2021*&quot;</span>)</span></code></pre></div>
+<pre><code>## *Figure 1: COVID-19 sterfgevallen in Germany in maand mei 2021*</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rpackage-amrnetherland.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
