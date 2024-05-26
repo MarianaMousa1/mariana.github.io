@@ -1,0 +1,11 @@
+# De organisatie van DAUR2 cursus bestanden met het guerrilla-analytics
+
+```{r, message=FALSE, error=FALSE}
+fs::dir_tree("C:/Users/Maria/Downloads/DSFB2/DAUR2")
+```
+
+
+
+```{r}
+knitr::include_graphics("images/Gruerrilla_tree.png")
+```

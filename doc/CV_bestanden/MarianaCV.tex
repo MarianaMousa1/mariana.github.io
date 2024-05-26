@@ -1,0 +1,259 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{616161}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\photo{foto.jpg}
+\name{Mariana}{mousa}
+
+\position{student}
+\address{Hogeschool Utrecht, Heidelberglan7}
+
+\email{\href{mailto:mariana_mousa@outlook.com}{\nolinkurl{mariana\_mousa@outlook.com}}}
+\github{MarianaMousa1}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+\quote{Hardwerkende en enthousiaste 3e jaars student life sciences met
+een passie voor experimenteel werk en big data analyse. Ik zet graag
+mijn achtergrondkennis in laboratoriumtechnieken en programmeren in en
+streef ernaar mijn analytische vaardigheden verder te ontwikkelen.
+Creatief denker met een motivatie om een betrouwbaar en waardevol
+teamlid te worden.}
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+% Pandoc CSL macros
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {April 2024}
+    {Mariana mousa~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{onderzoeksinteressestechnieken}{%
+\section{Onderzoeksinteresses/technieken}\label{onderzoeksinteressestechnieken}}
+
+Big-data analyses; celkweek; qPCR; microbiologie, biotechnologie,
+oncologie.
+
+\hypertarget{opleidingen}{%
+\section{Opleidingen}\label{opleidingen}}
+
+\begin{cventries}
+    \cventry{Biologie en medisch laboratoriumonderzoek}{Hogeschool Utrecht,}{Utrecht}{2021-heden}{}\vspace{-4.0mm}
+    \cventry{Schakel jaar}{Boswell-Bèta instituut}{Utrecht}{2019-2020}{}\vspace{-4.0mm}
+    \cventry{Bachelor's graad in biologie (afgerond)}{Al-Baath University}{Homs, Syrië}{2011-2016}{}\vspace{-4.0mm}
+\end{cventries}
+
+\hypertarget{projecten-en-technieken-tijdens-drie-jaar-studeren-bij-hogeschool-utrecht}{%
+\section{Projecten en technieken tijdens drie jaar studeren bij
+Hogeschool
+Utrecht}\label{projecten-en-technieken-tijdens-drie-jaar-studeren-bij-hogeschool-utrecht}}
+
+\hypertarget{labervaring}{%
+\subsection{labervaring}\label{labervaring}}
+
+\begin{cventries}
+    \cventry{Moleculaire biologie project}{De Invloed van foliumzuur op de genexpressie van MuRF-1 en Atrogin-1 in C2C12 bestuderen met behulp van qPCR}{}{ September 2023 - januari 2024}{\begin{cvitems}
+\item Technieken: Celkweek en qPCR
+\end{cvitems}}
+    \cventry{Farmacologie project.}{Reproductiviteit en ontwikkeling Caenorhabditis elegans bij blootstelling ethinylestradiol}{}{2023}{\begin{cvitems}
+\item Technieken: Reproductie, ontwikkeling assays.
+\end{cvitems}}
+    \cventry{Microbiologie project.}{De detectie van gonorroe-infecties met behulp van qPCR}{}{2013}{\begin{cvitems}
+\item Technieken: Bacterie kweek, qPCR, determinatie analyses en VITEK.
+\end{cvitems}}
+    \cventry{Data science project}{De invloed van bepaalde concentratie PFAS aan de expressie van CYP3A5 gen voor de tijdsduur van één dag.}{}{2023}{\begin{cvitems}
+\item bash
+\end{cvitems}}
+    \cventry{Genes and proteins project }{De regulatie van IL-8 promoter onderzoeken aan de hand van IL-8 promoter-reporter gene construct pAcGFP1-1L8p}{}{2022}{\begin{cvitems}
+\item Technieken: SDS-Page, western blot, kloneren.
+\end{cvitems}}
+    \cventry{Favisme project}{Het optimaliseren van de enzymactiviteit door aanpassing van de pH-waarde en metaalconcentratie.}{}{2022}{\begin{cvitems}
+\item Techniek: BCA assay, chromatografie.
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{data-science-projecten-en-tools}{%
+\section{Data Science projecten en
+Tools}\label{data-science-projecten-en-tools}}
+
+\begin{cventries}
+    \cventry{Onderzoek naar Transdifferentiatie van Fibroblasten naar Hersencellen}{}{}{}{\begin{cvitems}
+\item RNA-seq
+\end{cvitems}}
+\end{cventries}
+
+De Data science minor biedt de mogelijkheid om kennis en vaardigheden op
+te doen in het vakgebied van data science en big-data analyse:
+
+\begin{itemize}
+\tightlist
+\item
+  R/bash programmeertaal toepassen om de verschillende stappen van een
+  basis data analyse
+\item
+  Linux/command line - omgeving en RStudio, inclusief het gebruik van
+  packages.
+\item
+  NGS ( next generation sequencing) data analyses uitvoeren met behulp
+  van open source software.
+\item
+  RNA sequencing
+\item
+  Metagenomics
+\end{itemize}
+
+\hypertarget{werkervaring}{%
+\section{werkervaring}\label{werkervaring}}
+
+\begin{cventries}
+    \cventry{Activiteit regelen en lesgeven}{JRS (Jesuit Refugee Service)}{Homs, Syrië}{2017}{\begin{cvitems}
+\item In Child Protection Program in Al-Mukhales kerk. Leerzaam activiteiten regelen en levensvaardigheden lessen geven voor kinderen.
+\end{cvitems}}
+    \cventry{Docent Biologie}{Al Gassania Prive school}{Homs, Syrië}{2015 - 2016}{\begin{cvitems}
+\item Biologie onderwijs aan voor middelbare school studenten.
+\end{cvitems}}
+    \cventry{Docent}{Woman Support Center}{Homs-Syrië}{2013}{\begin{cvitems}
+\item Educatieve ondersteuning. Biologie, Natuurkunde en Scheikunde onderwijs geven aan middelbare school studenten.
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{talen}{%
+\section{Talen}\label{talen}}
+
+\begin{cventries}
+    \cventry{Arabisch}{}{}{}{\begin{cvitems}
+\item moedertaal
+\end{cvitems}}
+    \cventry{Nederlands}{}{}{}{\begin{cvitems}
+\item Vloeiend
+\end{cvitems}}
+    \cventry{Engels}{}{}{}{\begin{cvitems}
+\item Gevorderd
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{cursussen}{%
+\section{Cursussen}\label{cursussen}}
+
+\begin{cventries}
+    \cventry{IELTS (International English Language Testing System) voorbereidingscursus}{}{}{2020}{\begin{cvitems}
+\item Ter voorbereiding voor de IELTS test. (Certificaat IELTS behaald B2 level)
+\end{cvitems}}
+    \cventry{NT2 Nederlands als Tweede Taal}{}{}{2019}{\begin{cvitems}
+\item B2 hoogste niveau (Certificaat behaald)
+\end{cvitems}}
+    \cventry{VOORwerk cursus}{}{}{2018}{\begin{cvitems}
+\item Een cursus ter voorbereiding op het werken in Nederland.
+\end{cvitems}}
+    \cventry{Sociale vaardigheden Teamwork skills}{}{}{2017}{\begin{cvitems}
+\item Richt zich op het ontwikkelen van de bekwaamheden die nodig zijn om effectief te kunnen samenwerken in een teamomgeving.
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{nevenactiviteiten}{%
+\section{Nevenactiviteiten}\label{nevenactiviteiten}}
+
+\begin{cventries}
+    \cventry{Gastvrouw}{}{Idea Bibliotheek, Bilthoven}{2019}{\begin{cvitems}
+\item Vrijwilligerswerk
+\end{cvitems}}
+    \cventry{Docent assistent}{}{Patioschool, De Bilt}{2019}{\begin{cvitems}
+\item Vrijwilligerswerk
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{hobbys-en-interesses}{%
+\section{Hobby's en interesses}\label{hobbys-en-interesses}}
+
+\begin{cventries}
+    \cventry{Handenarbeid onder andere knutselen met kinderen en recycling materialen naar nieuwe materialen }{}{}{}{}\vspace{-4.0mm}
+    \cventry{Koken}{}{}{}{}\vspace{-4.0mm}
+    \cventry{Kaarsen versieren}{}{}{}{}\vspace{-4.0mm}
+\end{cventries}
+
+
+
+\end{document}
