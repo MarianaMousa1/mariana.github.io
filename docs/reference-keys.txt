@@ -39,6 +39,8 @@ data-loading-and-preparation
 visualizations
 country-vs.-vaccine-response
 logistic-regression-analysis
+regression
+table
 conclusie
 dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases.
 data-laden
