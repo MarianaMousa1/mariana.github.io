@@ -1,4 +1,4 @@
-introductie
+portfolio-introductie
 cv
 vooruit-kijken
 human-leukocyte-antigens-tools-in-r-hlar
@@ -47,7 +47,7 @@ sql-script
 samenvoegen-van-gapminder-flu-en-dengue-data
 de-data-exporteren-naar-dbeaver
 covid-19-report-parametrizing-in-rmarkdown
-introductie-1
+introductie
 load-de-data
 data-filteren-en-gegevens-voorbereiden
 plotten-maken-voor-covid-19-gevallen-en-sterfgevallen.

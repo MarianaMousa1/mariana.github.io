@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Human leukocyte antigens tools in R (hlar) | Introductie</title>
+  <meta name="description" content="Chapter 4 Human leukocyte antigens tools in R (hlar) | Introductie" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Human leukocyte antigens tools in R (hlar) | Introductie" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Human leukocyte antigens tools in R (hlar) | Introductie" />
+  
+  
+  
+
+<meta name="author" content="Mariana Mousa" />
+
+
+<meta name="date" content="2024-05-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="vooruit-kijken.html"/>
+<link rel="next" href="de-organisatie-van-daur2-cursus-bestanden-met-het-guerrilla-analytics.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="portfolio-introductie.html"><a href="portfolio-introductie.html"><i class="fa fa-check"></i><b>1</b> Portfolio Introductie</a></li>
+<li class="chapter" data-level="2" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>2</b> CV</a></li>
+<li class="chapter" data-level="3" data-path="vooruit-kijken.html"><a href="vooruit-kijken.html"><i class="fa fa-check"></i><b>3</b> vooruit kijken</a></li>
+<li class="chapter" data-level="4" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html"><i class="fa fa-check"></i><b>4</b> Human leukocyte antigens tools in R (hlar)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#het-menselijke-hla-systeem"><i class="fa fa-check"></i><b>4.1</b> Het menselijke HLA-systeem</a></li>
+<li class="chapter" data-level="4.2" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#hlar-tools"><i class="fa fa-check"></i><b>4.2</b> hlaR tools</a></li>
+<li class="chapter" data-level="4.3" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#data-cleaning-and-allele-level-analysis"><i class="fa fa-check"></i><b>4.3</b> Data cleaning and allele level analysis</a></li>
+<li class="chapter" data-level="4.4" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calallelemismfreq"><i class="fa fa-check"></i><b>4.4</b> CalAlleleMismFreq</a></li>
+<li class="chapter" data-level="4.5" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calalleletopn-topn-meest-voorkomende-hla-allelen"><i class="fa fa-check"></i><b>4.5</b> CalAlleleTopN topN meest voorkomende HLA-allelen</a></li>
+<li class="chapter" data-level="4.6" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calallelemismfreq-1"><i class="fa fa-check"></i><b>4.6</b> CalAlleleMismFreq</a></li>
+<li class="chapter" data-level="4.7" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calculate-class-i-hla-eplet-mismatch"><i class="fa fa-check"></i><b>4.7</b> Calculate class I HLA eplet mismatch</a></li>
+<li class="chapter" data-level="4.8" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calepletmhci"><i class="fa fa-check"></i><b>4.8</b> CalEpletMHCI</a></li>
+<li class="chapter" data-level="4.9" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calculate-class-ii-hla-eplet-mismatch"><i class="fa fa-check"></i><b>4.9</b> Calculate class II HLA eplet mismatch</a></li>
+<li class="chapter" data-level="4.10" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#calepletmhcii"><i class="fa fa-check"></i><b>4.10</b> CalEpletMHCII</a></li>
+<li class="chapter" data-level="4.11" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#hla-allelen-normaliseren"><i class="fa fa-check"></i><b>4.11</b> HLA-allelen normaliseren</a></li>
+<li class="chapter" data-level="4.12" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cleanallele"><i class="fa fa-check"></i><b>4.12</b> CleanAllele</a></li>
+<li class="chapter" data-level="4.13" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#evaluate-mismatched-alleles"><i class="fa fa-check"></i><b>4.13</b> Evaluate mismatched alleles</a></li>
+<li class="chapter" data-level="4.14" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#evalallelemism"><i class="fa fa-check"></i><b>4.14</b> EvalAlleleMism</a></li>
+<li class="chapter" data-level="4.15" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#count-hla-mismatch-at-the-allele-level"><i class="fa fa-check"></i><b>4.15</b> Count HLA mismatch at the allele level</a></li>
+<li class="chapter" data-level="4.16" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#countallelemism"><i class="fa fa-check"></i><b>4.16</b> CountAlleleMism</a></li>
+<li class="chapter" data-level="4.17" data-path="human-leukocyte-antigens-tools-in-r-hlar.html"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#imputehaplo"><i class="fa fa-check"></i><b>4.17</b> ImputeHaplo</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="de-organisatie-van-daur2-cursus-bestanden-met-het-guerrilla-analytics.html"><a href="de-organisatie-van-daur2-cursus-bestanden-met-het-guerrilla-analytics.html"><i class="fa fa-check"></i><b>5</b> De organisatie van DAUR2 cursus bestanden met het guerrilla-analytics</a></li>
+<li class="chapter" data-level="6" data-path="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html"><i class="fa fa-check"></i><b>6</b> Data analyse afgeleid van een experiment op volwassen C.elegans nematoden</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#bestand-van-de-ruwe-data-importeren-en-inspecteren"><i class="fa fa-check"></i><b>6.1</b> Bestand van de ruwe data importeren en inspecteren</a></li>
+<li class="chapter" data-level="6.2" data-path="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#de-data-visualiseren-in-een-spreidingsdiagram-met-ggplot2"><i class="fa fa-check"></i><b>6.2</b> De data visualiseren in een spreidingsdiagram met ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="identifying-reproducibility.html"><a href="identifying-reproducibility.html"><i class="fa fa-check"></i><b>7</b> Identifying reproducibility</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="identifying-reproducibility.html"><a href="identifying-reproducibility.html#voor-dit-opdracht-wordt-er-een-artikel-gekozen-van-spandidos-publications-website."><i class="fa fa-check"></i><b>7.1</b> Voor dit opdracht wordt er een artikel gekozen van SPANDIDOS PUBLICATIONS website.</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="identifying-reproducibility.html"><a href="identifying-reproducibility.html#reference-voor-het-artikel"><i class="fa fa-check"></i><b>7.1.1</b> Reference voor het artikel:</a></li>
+<li class="chapter" data-level="7.1.2" data-path="identifying-reproducibility.html"><a href="identifying-reproducibility.html#de-criteria-voor-reproduciblity"><i class="fa fa-check"></i><b>7.1.2</b> De criteria voor reproduciblity</a></li>
+<li class="chapter" data-level="7.1.3" data-path="identifying-reproducibility.html"><a href="identifying-reproducibility.html#overview"><i class="fa fa-check"></i><b>7.1.3</b> Overview</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><a href="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><i class="fa fa-check"></i><b>8</b> Reproducibility Study on COVID-19 Vaccine Survey Paper (R code paper).</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><a href="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html#doel-van-de-code"><i class="fa fa-check"></i><b>8.1</b> Doel van de code</a></li>
+<li class="chapter" data-level="8.2" data-path="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><a href="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html#code-beoordeling"><i class="fa fa-check"></i><b>8.2</b> Code beoordeling</a></li>
+<li class="chapter" data-level="8.3" data-path="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><a href="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html#errors-and-fixes"><i class="fa fa-check"></i><b>8.3</b> Errors and Fixes</a></li>
+<li class="chapter" data-level="8.4" data-path="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><a href="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html#effort-to-reproduce-visualization"><i class="fa fa-check"></i><b>8.4</b> Effort to Reproduce Visualization</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html"><a href="reproducibility-study-on-covid-19-vaccine-survey-paper-r-code-paper..html#code-toepassing"><i class="fa fa-check"></i><b>8.4.1</b> code toepassing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="conclusie.html"><a href="conclusie.html"><i class="fa fa-check"></i><b>9</b> Conclusie</a></li>
+<li class="chapter" data-level="10" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><i class="fa fa-check"></i><b>10</b> Dit opdracht wordt de Structured Query Language - or SQL programmeertaal gebruikt voor het beheren van relationele databases.</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#data-laden"><i class="fa fa-check"></i><b>10.1</b> Data laden</a></li>
+<li class="chapter" data-level="10.2" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#data-tidy-maken"><i class="fa fa-check"></i><b>10.2</b> Data Tidy maken</a></li>
+<li class="chapter" data-level="10.3" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#een-nieuwe-postgresql-database-maken-onder-de-naam-workflowsdb-in-dbeaver"><i class="fa fa-check"></i><b>10.3</b> Een nieuwe PostgreSQL database maken onder de naam “workflowsdb” in Dbeaver</a></li>
+<li class="chapter" data-level="10.4" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#sql-script"><i class="fa fa-check"></i><b>10.4</b> ## SQL script</a></li>
+<li class="chapter" data-level="10.5" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#samenvoegen-van-gapminder-flu-en-dengue-data"><i class="fa fa-check"></i><b>10.5</b> samenvoegen van gapminder, flu en dengue data</a></li>
+<li class="chapter" data-level="10.6" data-path="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html"><a href="dit-opdracht-wordt-de-structured-query-language---or-sql-programmeertaal-gebruikt-voor-het-beheren-van-relationele-databases..html#de-data-exporteren-naar-dbeaver"><i class="fa fa-check"></i><b>10.6</b> De data exporteren naar Dbeaver</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html"><i class="fa fa-check"></i><b>11</b> Covid-19 report parametrizing in RMarkdown</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#introductie"><i class="fa fa-check"></i><b>11.1</b> Introductie</a></li>
+<li class="chapter" data-level="11.2" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#load-de-data"><i class="fa fa-check"></i><b>11.2</b> load de data</a></li>
+<li class="chapter" data-level="11.3" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#data-filteren-en-gegevens-voorbereiden"><i class="fa fa-check"></i><b>11.3</b> Data filteren en gegevens voorbereiden</a></li>
+<li class="chapter" data-level="11.4" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#plotten-maken-voor-covid-19-gevallen-en-sterfgevallen."><i class="fa fa-check"></i><b>11.4</b> Plotten maken voor COVID-19-gevallen en sterfgevallen.</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="rpackage-amrnetherland.html"><a href="rpackage-amrnetherland.html"><i class="fa fa-check"></i><b>12</b> Rpackage AMRNetherland</a></li>
+<li class="chapter" data-level="13" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html"><i class="fa fa-check"></i><b>13</b> Introductie naar project AMR</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html#doelstellingen"><i class="fa fa-check"></i><b>13.1</b> Doelstellingen</a></li>
+<li class="chapter" data-level="13.2" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html#methodologie"><i class="fa fa-check"></i><b>13.2</b> Methodologie</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html#belang"><i class="fa fa-check"></i><b>13.2.1</b> Belang</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html#referenties"><i class="fa fa-check"></i><b>13.3</b> Referenties</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introductie</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="human-leukocyte-antigens-tools-in-r-hlar" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Human leukocyte antigens tools in R (hlar)<a href="human-leukocyte-antigens-tools-in-r-hlar.html#human-leukocyte-antigens-tools-in-r-hlar" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>HLA-typering, ook bekend als HLA-genotypering of HLA-typing, is een laboratoriumtechniek die wordt gebruikt om de genetische varianten van de menselijke leukocytenantigeen (HLA)-genen in een individu te identificeren. HLA-genen coderen voor eiwitten die zich op het celoppervlak bevinden en een cruciale rol spelen bij het immuunsysteem door het lichaam te helpen onderscheid te maken tussen eigen cellen en indringers zoals bacteriën en virussen.</p>
+<div id="het-menselijke-hla-systeem" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Het menselijke HLA-systeem<a href="human-leukocyte-antigens-tools-in-r-hlar.html#het-menselijke-hla-systeem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Is zeer polymorf, wat betekent dat er veel verschillende varianten (allelen) van HLA-genen zijn die tussen individuen kunnen verschillen. Deze genetische variabiliteit speelt een belangrijke rol bij het bepalen van de compatibiliteit van weefsels en organen voor transplantatie, evenals bij het risico op auto-immuunziekten, allergieën en andere immuungerelateerde aandoeningen.</p>
+<p>HLA-typering omvat het identificeren van de specifieke allelen van HLA-klasse I-genen (HLA-A, HLA-B en HLA-C) en HLA-klasse II-genen (HLA-DR, HLA-DQ en HLA-DP) in een individu. Dit kan worden gedaan met behulp van verschillende laboratoriumtechnieken, waaronder moleculaire methoden zoals polymerasekettingreactie (PCR) gevolgd door sequentieanalyse, next-generation sequencing (NGS), en andere gespecialiseerde technieken.</p>
+<p>HLA-typering is essentieel bij transplantatiegeneeskunde omdat een goede match tussen donor en ontvanger op HLA-allelen het risico op afstoting van getransplanteerde weefsels en organen vermindert. Het wordt ook gebruikt bij het onderzoek naar immuungerelateerde aandoeningen om te begrijpen hoe genetische variaties in het HLA-systeem het risico op ziekte beïnvloeden.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb2-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/HLA_classes.webp&quot;</span>)</span></code></pre></div>
+<p><img src="images/HLA_classes.webp" /><!-- -->
+Figure 1. Isotypes of human major histocompatibility proteins</p>
+</div>
+<div id="hlar-tools" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> hlaR tools<a href="human-leukocyte-antigens-tools-in-r-hlar.html#hlar-tools" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Is een package met verschillende functies voor eplet-analyse van HLA (humaan leukocytenantigeen) mismatches tussen donor en ontvanger.
+De data die in dit opdracht wordt gebruikt is geiïmporteerd van Allele Frequency Net Database.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb3-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/HLA_worflow.jpg&quot;</span>)</span></code></pre></div>
+<p><img src="images/HLA_worflow.jpg" width="333" />
+Figer2: hlaR workflow</p>
+<p>De dataset is geiïmporteerd van Allele Frequency Net Database Link:<a href="https://www.allelefrequencies.net/population.asp?pop_id=3327" class="uri">https://www.allelefrequencies.net/population.asp?pop_id=3327</a></p>
+</div>
+<div id="data-cleaning-and-allele-level-analysis" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Data cleaning and allele level analysis<a href="human-leukocyte-antigens-tools-in-r-hlar.html#data-cleaning-and-allele-level-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="calallelemismfreq" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> CalAlleleMismFreq<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calallelemismfreq" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De eerste stap om de hla analyse toe te passen is het inspecteren van de meest voorkomende allelen in de dataset van de patienten en de doners gevolgd door de evaluatie van HLA-mismatches op allelniveau binnen een populatie.
+De input van CalAlleleMismFreq() functie is HLA-typeringen van verschillende dooners en ontvangers.</p>
+<p>Voor elk donor-ontvangerpaar identificeert de functie de niet-overeenkomende allelen, gerangschikt op basis van hun frequentie in de totale populatie zoals weergegeven in de invoerdataset</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-1" tabindex="-1"></a><span class="co"># Lees de recipient data in zonder headers</span></span>
+<span id="cb4-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-2" tabindex="-1"></a>rcptDATA <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;doc/hla_bestanden/AFND0001243.csv&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-4" tabindex="-1"></a><span class="co"># Definieer de nieuwe kolomnamen</span></span>
+<span id="cb4-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-5" tabindex="-1"></a>new_headers1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;recipient.a1&quot;</span>, <span class="st">&quot;recipient.a2&quot;</span>, <span class="st">&quot;recipient.b1&quot;</span>, <span class="st">&quot;recipient.b2&quot;</span>, </span>
+<span id="cb4-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-6" tabindex="-1"></a>                 <span class="st">&quot;recipient.c1&quot;</span>, <span class="st">&quot;recipient.c2&quot;</span>, <span class="st">&quot;recipient.drb11&quot;</span>, <span class="st">&quot;recipient.drb12&quot;</span>)</span>
+<span id="cb4-7"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-7" tabindex="-1"></a><span class="co">#new_headers</span></span>
+<span id="cb4-8"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-8" tabindex="-1"></a><span class="fu">colnames</span>(rcptDATA) <span class="ot">&lt;-</span> new_headers1</span>
+<span id="cb4-9"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb4-9" tabindex="-1"></a><span class="fu">colnames</span>(rcptDATA)</span></code></pre></div>
+<pre><code>## [1] &quot;id&quot;              &quot;recipient.a1&quot;    &quot;recipient.a2&quot;    &quot;recipient.b1&quot;   
+## [5] &quot;recipient.b2&quot;    &quot;recipient.c1&quot;    &quot;recipient.c2&quot;    &quot;recipient.drb11&quot;
+## [9] &quot;recipient.drb12&quot;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-1" tabindex="-1"></a><span class="co">#  Lees de donor data in zonder headers</span></span>
+<span id="cb6-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-2" tabindex="-1"></a>donorDATA <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;doc/hla_bestanden/AFND0003327.csv&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-4" tabindex="-1"></a><span class="co">#new_headers</span></span>
+<span id="cb6-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-5" tabindex="-1"></a>new_headers2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;donor.a1&quot;</span>, <span class="st">&quot;donor.a2&quot;</span>, <span class="st">&quot;donor.b1&quot;</span>, <span class="st">&quot;donor.b2&quot;</span>, </span>
+<span id="cb6-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-6" tabindex="-1"></a>                 <span class="st">&quot;donor.c1&quot;</span>, <span class="st">&quot;donor.c2&quot;</span>, <span class="st">&quot;donor.drb11&quot;</span>, <span class="st">&quot;donor.drb12&quot;</span>)</span>
+<span id="cb6-7"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-7" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-8" tabindex="-1"></a><span class="fu">colnames</span>(donorDATA) <span class="ot">&lt;-</span> new_headers2</span>
+<span id="cb6-9"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb6-9" tabindex="-1"></a><span class="fu">colnames</span>(donorDATA)</span></code></pre></div>
+<pre><code>## [1] &quot;id&quot;          &quot;donor.a1&quot;    &quot;donor.a2&quot;    &quot;donor.b1&quot;    &quot;donor.b2&quot;   
+## [6] &quot;donor.c1&quot;    &quot;donor.c2&quot;    &quot;donor.drb11&quot; &quot;donor.drb12&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb8-1" tabindex="-1"></a> <span class="co"># Voeg de twee data samen op basis van de kolom id.</span></span>
+<span id="cb8-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb8-2" tabindex="-1"></a>DATA <span class="ot">&lt;-</span> <span class="fu">merge</span>(rcptDATA, donorDATA, <span class="at">by.x =</span> <span class="st">&quot;id&quot;</span>, <span class="at">by.y =</span> <span class="st">&quot;id&quot;</span>)</span>
+<span id="cb8-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb8-3" tabindex="-1"></a><span class="fu">head</span>(DATA)</span></code></pre></div>
+<pre><code>##   id recipient.a1 recipient.a2 recipient.b1 recipient.b2 recipient.c1
+## 1  1      A*02:01      A*11:01      B*18:01      B*40:01      C*03:04
+## 2  2      A*03:01      A*26:01      B*07:02      B*35:01      C*04:01
+## 3  3      A*24:02      A*11:01      B*08:01      B*44:02      C*05:01
+## 4  4   A*68:01:02      A*29:02      B*07:02      B*40:01      C*03:04
+## 5  5      A*01:01      A*01:01      B*08:01      B*57:01      C*06:02
+## 6  6      A*03:01      A*25:01      B*07:02      B*27:05      C*01:02
+##   recipient.c2 recipient.drb11 recipient.drb12 donor.a1 donor.a2 donor.b1
+## 1      C*05:01      DRB1*04:04   DRB1*03:01:01  A*11:01  A*68:02  B*15:16
+## 2      C*07:02      DRB1*01:01      DRB1*04:04  A*02:01  A*33:03  B*07:02
+## 3   C*07:01:01   DRB1*04:01:01   DRB1*03:01:01  A*23:01  A*68:02  B*15:16
+## 4      C*07:02   DRB1*15:01:01   DRB1*04:01:01  A*31:01  A*31:01  B*35:20
+## 5   C*07:01:01   DRB1*07:01:01      DRB1*13:01  A*02:01  A*23:01  B*15:03
+## 6      C*07:02   DRB1*15:01:01      DRB1*01:03  A*33:01  A*36:01  B*14:02
+##   donor.b2 donor.c1 donor.c2 donor.drb11 donor.drb12
+## 1  B*35:01  C*04:01  C*14:02  DRB1*01:01  DRB1*01:02
+## 2  B*53:01  C*04:01  C*07:02  DRB1*08:04  DRB1*15:01
+## 3  B*50:02  C*04:01  C*14:02  DRB1*01:02  DRB1*14:01
+## 4  B*39:05  C*03:04  C*04:01  DRB1*08:02  DRB1*14:02
+## 5  B*45:01  C*02:10  C*16:01  DRB1*01:02  DRB1*12:01
+## 6  B*53:01  C*04:01  C*08:02  DRB1*07:01  DRB1*11:01</code></pre>
+<p>Gebruik de functie CalAlleleMismFreq om de mismatch te evalueren op allelniveau tussen donor en ontvanger en presenteert vervolgens de meest voorkomende niet-overeenkomende allelen.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-1" tabindex="-1"></a><span class="co"># DATA</span></span>
+<span id="cb10-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-3" tabindex="-1"></a><span class="co">#allele A</span></span>
+<span id="cb10-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-4" tabindex="-1"></a>don_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;donor.a1&quot;</span>, <span class="st">&quot;donor.a2&quot;</span>)</span>
+<span id="cb10-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-5" tabindex="-1"></a>rcpt_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;recipient.a1&quot;</span>, <span class="st">&quot;recipient.a2&quot;</span>)</span>
+<span id="cb10-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-6" tabindex="-1"></a>re_a <span class="ot">&lt;-</span> <span class="fu">CalAlleleMismFreq</span>(<span class="at">dat_in =</span> DATA, <span class="at">nms_don =</span> don_a, <span class="at">nms_rcpt =</span> rcpt_a)</span>
+<span id="cb10-7"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb10-7" tabindex="-1"></a><span class="fu">head</span>(re_a)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   allele   freq
+##   &lt;chr&gt;   &lt;int&gt;
+## 1 A*23:01    37
+## 2 A*02:01    28
+## 3 A*03:01    19
+## 4 A*24:02    16
+## 5 A*30:01    16
+## 6 A*30:02    14</code></pre>
+<p>conclusie CalAlleleMismFreq:
+Meest Voorkomende Allelen:</p>
+<p>Het allel A<em>23:01 komt het meest voor met een frequentie van 37.
+A</em>02:01 is het op een na meest voorkomende allel met een frequentie van 28.</p>
+<p>Minder Voorkomende Allelen:</p>
+<p>De allelen A<em>01:03 en A</em>68:02 hebben beide een frequentie van 11.
+A<em>01:01 en A</em>74:01 hebben beide een frequentie van 10.Meest voorkomende allele in dit geval is A*23:01, met een frequentie van 37.</p>
+</div>
+<div id="calalleletopn-topn-meest-voorkomende-hla-allelen" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> CalAlleleTopN topN meest voorkomende HLA-allelen<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calalleletopn-topn-meest-voorkomende-hla-allelen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="calallelemismfreq-1" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> CalAlleleMismFreq<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calallelemismfreq-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voer opgeschoonde HLA-gegevens (Human Leukocyte Antigen) in voor een populatie transplantatiedonoren en ontvangers om de meest voorkomende allelen in de populatie te bepalen.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb12-1" tabindex="-1"></a><span class="co">#CalAlleleTopN topN most frequent HLA alleles</span></span>
+<span id="cb12-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb12-2" tabindex="-1"></a>don_b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;donor.a1&quot;</span>, <span class="st">&quot;donor.a2&quot;</span>)</span>
+<span id="cb12-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb12-3" tabindex="-1"></a>rcpt_b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;recipient.a1&quot;</span>, <span class="st">&quot;recipient.a2&quot;</span>)</span>
+<span id="cb12-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb12-4" tabindex="-1"></a>re_b <span class="ot">&lt;-</span> <span class="fu">CalAlleleTopN</span>(<span class="at">dat_in =</span> DATA, <span class="at">nms_don =</span> don_b, <span class="at">nms_rcpt =</span> rcpt_b, <span class="at">top_n =</span> <span class="dv">5</span>)</span>
+<span id="cb12-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb12-5" tabindex="-1"></a><span class="fu">head</span>(re_b)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   part_type allele   freq
+##   &lt;chr&gt;     &lt;chr&gt;   &lt;int&gt;
+## 1 don       A*02:01    39
+## 2 don       A*23:01    38
+## 3 don       A*03:01    25
+## 4 don       A*24:02    18
+## 5 don       A*30:01    16
+## 6 rcpt      A*02:01    73</code></pre>
+<p>conclusie CalAlleleTopNDi:</p>
+<p>De meest voorkomende allelen en hun frequenties onder donoren (don) zijn:
+Allel 2 met frequentie 15
+Allel 29 met frequentie 5
+Allel 11 met frequentie 4
+Allel 3 met frequentie 3
+Allel 25 en allel 68 beide met frequentie 2</p>
+<p>Frequenties voor Ontvangers:
+De meest voorkomende allelen en hun frequenties onder ontvangers (rcpt) zijn:
+Allel 2 met frequentie 17
+Allel 1 met frequentie 6
+Allel 32 met frequentie 5
+Allel 24 met frequentie 4</p>
+<p>Vergelijking tussen Donoren en Ontvangers:
+Het allel 2 is het meest voorkomend bij zowel donoren als ontvangers, hoewel de frequentie hoger is bij ontvangers (17) dan bij donoren (15).
+De allelen en hun frequenties verschillen verder tussen donoren en ontvangers, wat wijst op verschillen in de genetische samenstelling tussen deze twee groepen.</p>
+</div>
+<div id="calculate-class-i-hla-eplet-mismatch" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Calculate class I HLA eplet mismatch<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calculate-class-i-hla-eplet-mismatch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="calepletmhci" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> CalEpletMHCI<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calepletmhci" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deze functie is ontworpen te om eplet-mismatches te berekenen voor MHC-I (Major Histocompatibility Complex Class I) moleculen. Eplets zijn specifieke aminozuursequenties op HLA-moleculen die een rol spelen in de herkenning door het immuunsysteem. Het identificeren van mismatches in eplets tussen donoren en ontvangers is cruciaal voor transplantatie-compatibiliteit, omdat mismatches kunnen leiden tot afstoting van het getransplanteerde orgaan.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb14-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb14-2" tabindex="-1"></a>MHC_I_eplet_v3 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;doc/hla_bestanden/MHC_I_eplet_v3.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## New names:
+## Rows: 73 Columns: 1892
+## ── Column specification
+## ───────────────────────── Delimiter: &quot;,&quot; chr
+## (1891): type, A*01:01, A*01:02, A*01:03,
+## A*01:06, A*01:07, A*01:08, A*01... dbl (1):
+## index
+## ℹ Use `spec()` to retrieve the full column
+## specification for this data. ℹ Specify the
+## column types or set `show_col_types = FALSE` to
+## quiet this message.
+## • `B*39:02` -&gt; `B*39:02...1079`
+## • `B*39:02` -&gt; `B*39:02...1080`</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb16-1" tabindex="-1"></a><span class="fu">head</span>(MHC_I_eplet_v3)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 1,892
+##   index type  `A*01:01` `A*01:02` `A*01:03` `A*01:06` `A*01:07` `A*01:08`
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;    
+## 1     1 AbV   &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      56R       &lt;NA&gt;     
+## 2     2 AbV   44KM      44KM      44KM      44KM      &lt;NA&gt;      44KM     
+## 3     3 AbV   &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;     
+## 4     4 AbV   62QE      62QE      62QE      62QE      62QE      62QE     
+## 5     5 AbV   &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;     
+## 6     6 AbV   65RNA     65RNA     65RNA     65RNA     65RNA     65RNA    
+## # ℹ 1,884 more variables: `A*01:09` &lt;chr&gt;, `A*01:10` &lt;chr&gt;, `A*01:12` &lt;chr&gt;,
+## #   `A*01:13` &lt;chr&gt;, `A*01:14` &lt;chr&gt;, `A*01:17` &lt;chr&gt;, `A*01:19` &lt;chr&gt;,
+## #   `A*01:20` &lt;chr&gt;, `A*01:21` &lt;chr&gt;, `A*01:23` &lt;chr&gt;, `A*01:24` &lt;chr&gt;,
+## #   `A*01:25` &lt;chr&gt;, `A*01:26` &lt;chr&gt;, `A*01:28` &lt;chr&gt;, `A*01:29` &lt;chr&gt;,
+## #   `A*01:30` &lt;chr&gt;, `A*01:32` &lt;chr&gt;, `A*01:33` &lt;chr&gt;, `A*01:35` &lt;chr&gt;,
+## #   `A*02:01` &lt;chr&gt;, `A*02:02` &lt;chr&gt;, `A*02:03` &lt;chr&gt;, `A*02:04` &lt;chr&gt;,
+## #   `A*02:05` &lt;chr&gt;, `A*02:06` &lt;chr&gt;, `A*02:07` &lt;chr&gt;, `A*02:08` &lt;chr&gt;, …</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb18-1" tabindex="-1"></a>dat_MHC1 <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;doc/hla_bestanden/MHC_I_test.csv&quot;</span>)</span>
+<span id="cb18-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb18-3" tabindex="-1"></a>re_MHC1 <span class="ot">&lt;-</span> <span class="fu">CalEpletMHCI</span>(<span class="at">dat_in =</span> dat_MHC1, <span class="at">ver =</span> <span class="dv">3</span>)</span>
+<span id="cb18-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb18-4" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb18-5" tabindex="-1"></a><span class="fu">head</span>(re_MHC1)</span></code></pre></div>
+<pre><code>## $single_detail
+## # A tibble: 72 × 6
+## # Rowwise: 
+##    pair_id subject hla     haplotype_id mm_eplets                         mm_cnt
+##      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;                              &lt;dbl&gt;
+##  1     101 subj1   A*02:01 1            &quot;&quot;                                     0
+##  2     101 subj1   A*01:01 2            &quot;44KM,76ANT,163RG,166DG,77NGT&quot;         5
+##  3     101 subj1   B*15:01 1            &quot;44RME,71TTS,156WA&quot;                    3
+##  4     101 subj1   B*08:01 2            &quot;71TTS,156DA,177DT&quot;                    3
+##  5     101 subj1   C*03:04 1            &quot;21H,73TVS,173K,219W,193PV,69RT,…      7
+##  6     101 subj1   C*07:01 2            &quot;&quot;                                     0
+##  7     103 subj2   A*03:01 1            &quot;62QE,144KR,161D,275EL&quot;                4
+##  8     103 subj2   A*02:01 2            &quot;&quot;                                     0
+##  9     103 subj2   B*07:02 1            &quot;65QIA,69AA,180E,156R,177DK,270L&quot;      6
+## 10     103 subj2   B*08:01 2            &quot;156DA,180E,177DT&quot;                     3
+## # ℹ 62 more rows
+## 
+## $overall_count
+## # A tibble: 12 × 4
+##    pair_id subject mm_cnt_tt mm_cnt_uniq
+##      &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;       &lt;int&gt;
+##  1     101 subj1          18          17
+##  2     103 subj2          27          19
+##  3     112 subj3          15          11
+##  4     134 subj4          14          12
+##  5     203 subj5          32          29
+##  6     211 subj6          20          17
+##  7     215 subj7          23          17
+##  8     216 subj8          28          15
+##  9     278 subj9          49          24
+## 10     298 subj10         12          12
+## 11     300 subj11         27          17
+## 12     301 subj12         31          24</code></pre>
+<p>conclusie CalEpletMHCI:
+subject: De naam of code van het individu waarop de eplets zijn berekend.
+mm_cnt_tt: Het totale aantal berekende eplets (mismatches) voor het individu.
+mm_cnt_uniq: Het aantal unieke eplets (unieke mismatches) voor het individu.</p>
+<p>Deze output geeft inzicht in de genetische variabiliteit binnen een populatie of dataset, specifiek gerelateerd aan de eplets van het major histocompatibility complex class I (MHCI). Hier zijn enkele mogelijke conclusies die uit deze gegevens kunnen worden getrokken:</p>
+<p>Genetische diversiteit: Individuen vertonen verschillende aantallen totale eplets (mm_cnt_tt) en unieke eplets (mm_cnt_uniq), wat wijst op variabiliteit in de genetische samenstelling van het MHCI.</p>
+<p>Immunologische relevantie: De aanwezigheid van unieke eplets suggereert dat elk individu mogelijk verschillende antigenen kan presenteren aan het immuunsysteem, wat belangrijk kan zijn voor immunologische processen zoals immuunresponsen en auto-immuunziekten.</p>
+<p>Klinische implicaties: Voor klinische toepassingen, zoals orgaantransplantaties of het ontwerpen van vaccins, kan het begrijpen van de diversiteit en unieke eplets van belang zijn. Dit kan helpen bij het matchen van donor-ontvangerparen of het ontwikkelen van gepersonaliseerde therapieën.</p>
+<p>Onderzoekspotentieel: De dataset kan dienen als basis voor verdere analyse naar correlaties tussen genetische variabiliteit, epletprofielen en klinische uitkomsten, wat nieuwe inzichten kan bieden in immunogenetica.</p>
+</div>
+<div id="calculate-class-ii-hla-eplet-mismatch" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Calculate class II HLA eplet mismatch<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calculate-class-ii-hla-eplet-mismatch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="calepletmhcii" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> CalEpletMHCII<a href="human-leukocyte-antigens-tools-in-r-hlar.html#calepletmhcii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deze functie wordt toegepast om eptlet-mismatches te berekenen op basis van MHC-II (Major Histocompatibility Complex Class II) gegevens. MHC-II moleculen spelen een cruciale rol bij de presentatie van antigenen aan CD4+ T-cellen in het immuunsysteem.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-1" tabindex="-1"></a><span class="do">### CalEpletMHCII</span></span>
+<span id="cb20-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-2" tabindex="-1"></a>MHC_II_eplet_v3 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;doc/hla_bestanden/MHC_II_eplet_B_v3.csv&quot;</span>)</span>
+<span id="cb20-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-4" tabindex="-1"></a>dat_MHCII <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;doc/hla_bestanden/MHC_II_test.csv&quot;</span>)</span>
+<span id="cb20-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-5" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-6" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-7" tabindex="-1"></a>re_MHCII <span class="ot">&lt;-</span> <span class="fu">CalEpletMHCII</span>(<span class="at">dat_in =</span> dat_MHCII, <span class="at">ver =</span> <span class="dv">3</span>)</span>
+<span id="cb20-8"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-8" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb20-9" tabindex="-1"></a><span class="fu">head</span>(re_MHCII)</span></code></pre></div>
+<pre><code>## $single_detail
+## # A tibble: 130 × 6
+## # Rowwise: 
+##    pair_id subject hla        haplotype_id mm_eplets                      mm_cnt
+##      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;                           &lt;dbl&gt;
+##  1     101 subj1   DPA1*02:01 1            &quot;50R,111R,127P&quot;                     3
+##  2     101 subj1   DPA1*04:01 2            &quot;50R,127P,190A&quot;                     3
+##  3     101 subj1   DPB1*31:01 1            &quot;35FA&quot;                              1
+##  4     101 subj1   DPB1*02:01 2            &quot;69E,rp58E,rp67IE,qp67IE,84G,…      7
+##  5     101 subj1   DQA1*02:01 1            &quot;47KHL&quot;                             1
+##  6     101 subj1   DQA1*05:02 2            &quot;&quot;                                  0
+##  7     101 subj1   DQB1*06:49 1            &quot;77T,87F,rqp37YA,rqp57D,rq77T…      6
+##  8     101 subj1   DQB1*04:02 2            &quot;56L,77T,rq75VT,rqp37YA,rqp57…     11
+##  9     101 subj1   DRB1*04:01 1            &quot;37YV,96Y,98E,rq37YV,37Y&quot;           5
+## 10     101 subj1   DRB1*08:01 2            &quot;16Y,37YV,57S,rq37YV,rq57S,37…      8
+## # ℹ 120 more rows
+## 
+## $overall_count
+## # A tibble: 12 × 4
+##    pair_id subject mm_cnt_tt mm_cn_uniq
+##      &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;
+##  1     101 subj1          57         44
+##  2     103 subj2         111         63
+##  3     112 subj3          19         16
+##  4     134 subj4          14         13
+##  5     203 subj5          47         33
+##  6     211 subj6          45         38
+##  7     215 subj7          57         40
+##  8     216 subj8          37         31
+##  9     278 subj9          24         20
+## 10     298 subj10         28         25
+## 11     300 subj11          9          9
+## 12     301 subj12         32         29
+## 
+## $dqdr_risk
+##    pair_id DQ DR   risk
+## 1      101 12 12 interm
+## 2      103 19 19   high
+## 3      112  8  0    low
+## 4      134  5  3    low
+## 5      203 12 12 interm
+## 6      211 11 10 interm
+## 7      215 10 11 interm
+## 8      216  6  8 interm
+## 9      278  2  5    low
+## 10     298  8  8 interm
+## 11     300  5  3    low
+## 12     301 14  7 interm</code></pre>
+<p>DQ: Aantal eptlet-mismatches voor het HLA-DQ locus tussen de donor en ontvanger.
+DR: Aantal eptlet-mismatches voor het HLA-DR locus tussen de donor en ontvanger.
+risk: Het risiconiveau dat wordt geassocieerd met de mate van eptlet-mismatches tussen de donor en de ontvanger.
+De kolommen DQ en DR geven respectievelijk het aantal eptlet-mismatches weer voor de HLA-DQ en HLA-DR loci tussen de donor en de ontvanger. Het veld risk geeft aan welk risiconiveau wordt toegewezen aan het paar op basis van deze eptlet-mismatches.</p>
+<p>Het aantal eptlet-mismatches tussen donor en ontvanger kan helpen bij het voorspellen van de kans op afstoting na een transplantatie.</p>
+<p>Paar van HLA-allelen met pair_id nummer 103 heeft het grootste aantal eptlet-mismatches tussen donor en ontvanger dit betekent dat de kans op afstoting na een transplantatie groot is.</p>
+</div>
+<div id="hla-allelen-normaliseren" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> HLA-allelen normaliseren<a href="human-leukocyte-antigens-tools-in-r-hlar.html#hla-allelen-normaliseren" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="cleanallele" class="section level2 hasAnchor" number="4.12">
+<h2><span class="header-section-number">4.12</span> CleanAllele<a href="human-leukocyte-antigens-tools-in-r-hlar.html#cleanallele" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deze functie gebruikt ruwe, rommelige HLA-typegegevens (Human Leukocyte Antigen) als invoer. Het verwijdert inconsistente opmaak en onnodige symbolen. Als een van de twee allelen op een loci NA is, wordt aangenomen dat de locus homozygoot is</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb22-1" tabindex="-1"></a><span class="do">### CleanAllele </span></span>
+<span id="cb22-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb22-3" tabindex="-1"></a>re_CleanAllele <span class="ot">&lt;-</span> <span class="fu">CleanAllele</span>(DATA<span class="sc">$</span>recipient.b1, DATA<span class="sc">$</span>recipient.b2)</span>
+<span id="cb22-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb22-4" tabindex="-1"></a><span class="fu">head</span>(re_CleanAllele)</span></code></pre></div>
+<pre><code>##     var_1   var_2 locus1_clean locus2_clean
+## 1 B*18:01 B*40:01        18:01        40:01
+## 2 B*07:02 B*35:01        07:02        35:01
+## 3 B*08:01 B*44:02        08:01        44:02
+## 4 B*07:02 B*40:01        07:02        40:01
+## 5 B*08:01 B*57:01        08:01        57:01
+## 6 B*07:02 B*27:05        07:02        27:05</code></pre>
+<p>Conclusie_ CleanAllele:
+var_1 en var_2: Dit zijn karaktervariabelen die waarschijnlijk verschillende identificaties of kenmerken vertegenwoordigen. In de context van HLA-allelen zouden var_1 en var_2 de specifieke allelen kunnen aanduiden die worden vergeleken of geanalyseerd.</p>
+<p>locus1_clean en locus2_clean: Dit zijn schoongemaakte versies van de HLA-allelen uit var_1 en var_2, waarbij eventuele overbodige informatie zoals spaties of onnodige notaties zijn verwijderd. Ze vertegenwoordigen respectievelijk de gestandaardiseerde notaties van het eerste en het tweede HLA-allel.
+ar_1 en var_2: De oorspronkelijke HLA-allelen zoals gepresenteerd in de invoer.
+locus1_clean en locus2_clean: De gestandaardiseerde notaties van de HLA-allelen na het schoonmaken van onnodige informatie.
+AlleleMismCount: Het aantal mismatches tussen de HLA-alleelparen var_1 en var_2.
+De functie lijkt mismatches te tellen op basis van de gestandaardiseerde notaties van HLA-allelen. In dit geval is het aantal mismatches altijd 2, wat aangeeft dat er twee verschillen zijn tussen elk paar HLA-allelen (bijv. 18:01 versus 40:01)</p>
+</div>
+<div id="evaluate-mismatched-alleles" class="section level2 hasAnchor" number="4.13">
+<h2><span class="header-section-number">4.13</span> Evaluate mismatched alleles<a href="human-leukocyte-antigens-tools-in-r-hlar.html#evaluate-mismatched-alleles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="evalallelemism" class="section level2 hasAnchor" number="4.14">
+<h2><span class="header-section-number">4.14</span> EvalAlleleMism<a href="human-leukocyte-antigens-tools-in-r-hlar.html#evalallelemism" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deze functie evalueert het aantal HLA-allel-mismatches tussen donors en ontvangers. De precieze werking hangt af van de implementatie van deze functie in de gebruikte R-pakketten of scripts. Hoewel ik de exacte code niet heb, kan ik een algemeen idee geven van hoe dergelijke functies meestal werken en hoe je de resulterende gegevens kunt gebruiken.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb24-1" tabindex="-1"></a><span class="do">### EvalAlleleMism</span></span>
+<span id="cb24-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb24-3" tabindex="-1"></a><span class="co"># Mismatch bij een homozygoot allel </span></span>
+<span id="cb24-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb24-4" tabindex="-1"></a>re_EvalAlleleMism1<span class="ot">&lt;-</span> <span class="fu">EvalAlleleMism</span>(DATA<span class="sc">$</span>donor.c1, DATA<span class="sc">$</span>donor.c2, DATA<span class="sc">$</span>recipient.c1, DATA<span class="sc">$</span>recipient.c2, <span class="at">hmz_cnt =</span> <span class="dv">1</span>)</span>
+<span id="cb24-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb24-5" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb24-6" tabindex="-1"></a><span class="fu">head</span>(re_EvalAlleleMism1)</span></code></pre></div>
+<pre><code>##   don_1_clean don_2_clean recip_1_clean recip_2_clean mism_cnt
+## 1       04:01       14:02         03:04         05:01        2
+## 2       04:01       07:02         04:01         07:02        0
+## 3       04:01       14:02         05:01         07:01        2
+## 4       03:04       04:01         03:04         07:02        1
+## 5       02:10       16:01         06:02         07:01        2
+## 6       04:01       08:02         01:02         07:02        2</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb26-1" tabindex="-1"></a><span class="co"># Stel hmz_cnt = 2 om homozygote mismatches als dubbel te tellen.(allellen c1, c2)</span></span>
+<span id="cb26-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb26-2" tabindex="-1"></a>re_EvalAlleleMism_c <span class="ot">&lt;-</span> <span class="fu">EvalAlleleMism</span>(DATA<span class="sc">$</span>donor.c1, DATA<span class="sc">$</span>donor.c2, DATA<span class="sc">$</span>recipient.c1, DATA<span class="sc">$</span>recipient.c2, <span class="at">hmz_cnt =</span> <span class="dv">2</span>)</span>
+<span id="cb26-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb26-3" tabindex="-1"></a><span class="fu">head</span>(re_EvalAlleleMism_c)</span></code></pre></div>
+<pre><code>##   don_1_clean don_2_clean recip_1_clean recip_2_clean mism_cnt
+## 1       04:01       14:02         03:04         05:01        2
+## 2       04:01       07:02         04:01         07:02        0
+## 3       04:01       14:02         05:01         07:01        2
+## 4       03:04       04:01         03:04         07:02        1
+## 5       02:10       16:01         06:02         07:01        2
+## 6       04:01       08:02         01:02         07:02        2</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb28-1" tabindex="-1"></a><span class="co"># kies mismach c</span></span>
+<span id="cb28-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb28-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb32-1" tabindex="-1"></a>re_EvalAlleleMism_c <span class="ot">&lt;-</span> <span class="fu">rename</span>(re_EvalAlleleMism_c, <span class="at">mism.c =</span> mism_cnt)</span>
+<span id="cb32-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb32-3" tabindex="-1"></a><span class="co"># Stel hmz_cnt = 2 om homozygote mismatches als dubbel te tellen.(allelen drb11, drb12)</span></span>
+<span id="cb32-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb32-4" tabindex="-1"></a>re_EvalAlleleMism_drb <span class="ot">&lt;-</span> <span class="fu">EvalAlleleMism</span>(DATA<span class="sc">$</span>donor.drb11, DATA<span class="sc">$</span>donor.drb12, DATA<span class="sc">$</span>recipient.drb11, DATA<span class="sc">$</span>recipient.drb12, <span class="at">hmz_cnt =</span> <span class="dv">2</span>)</span>
+<span id="cb32-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb32-5" tabindex="-1"></a><span class="fu">head</span>(re_EvalAlleleMism_drb)</span></code></pre></div>
+<pre><code>##   don_1_clean don_2_clean recip_1_clean recip_2_clean mism_cnt
+## 1      101:01      101:02        104:04        103:01        0
+## 2      108:04      115:01        101:01        104:04        1
+## 3      101:02      114:01        104:01        103:01        1
+## 4      108:02      114:02        115:01        104:01        0
+## 5      101:02      112:01        107:01        113:01        0
+## 6      107:01      111:01        115:01        101:03        0</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb34-1" tabindex="-1"></a><span class="co"># kies mismach drb</span></span>
+<span id="cb34-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb34-2" tabindex="-1"></a>re_EvalAlleleMism_drb <span class="ot">&lt;-</span> <span class="fu">rename</span>(re_EvalAlleleMism_drb, <span class="at">mism.drb =</span> mism_cnt)</span>
+<span id="cb34-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb34-3" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb34-4" tabindex="-1"></a><span class="co"># Stel hmz_cnt = 2 om homozygote mismatches als dubbel te tellen.(allelen a1, a2)</span></span>
+<span id="cb34-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb34-5" tabindex="-1"></a>re_EvalAlleleMism_a <span class="ot">&lt;-</span> <span class="fu">EvalAlleleMism</span>(DATA<span class="sc">$</span>donor.a1, DATA<span class="sc">$</span>donor.a2, DATA<span class="sc">$</span>recipient.a1, DATA<span class="sc">$</span>recipient.a2, <span class="at">hmz_cnt =</span> <span class="dv">2</span>)</span>
+<span id="cb34-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb34-6" tabindex="-1"></a><span class="fu">head</span>(re_EvalAlleleMism_a)</span></code></pre></div>
+<pre><code>##   don_1_clean don_2_clean recip_1_clean recip_2_clean mism_cnt
+## 1       11:01       68:02         02:01         11:01        1
+## 2       02:01       33:03         03:01         26:01        2
+## 3       23:01       68:02         24:02         11:01        2
+## 4       31:01       31:01         68:01         29:02        2
+## 5       02:01       23:01         01:01         01:01        2
+## 6       33:01       36:01         03:01         25:01        2</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb36-1" tabindex="-1"></a><span class="co"># kies mismach a</span></span>
+<span id="cb36-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb36-2" tabindex="-1"></a>re_EvalAlleleMism_a <span class="ot">&lt;-</span> <span class="fu">rename</span>(re_EvalAlleleMism_a, <span class="at">mism.a =</span> mism_cnt)</span>
+<span id="cb36-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb36-3" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb36-4" tabindex="-1"></a><span class="co"># Stel hmz_cnt = 2 om homozygote mismatches als dubbel te tellen.(allelen b1,b2)</span></span>
+<span id="cb36-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb36-5" tabindex="-1"></a>re_EvalAlleleMism_b <span class="ot">&lt;-</span> <span class="fu">EvalAlleleMism</span>(DATA<span class="sc">$</span>donor.b1, DATA<span class="sc">$</span>donor.b2, DATA<span class="sc">$</span>recipient.b1, DATA<span class="sc">$</span>recipient.b2, <span class="at">hmz_cnt =</span> <span class="dv">2</span>)</span>
+<span id="cb36-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb36-6" tabindex="-1"></a><span class="fu">head</span>(re_EvalAlleleMism_b)</span></code></pre></div>
+<pre><code>##   don_1_clean don_2_clean recip_1_clean recip_2_clean mism_cnt
+## 1       15:16       35:01         18:01         40:01        2
+## 2       07:02       53:01         07:02         35:01        1
+## 3       15:16       50:02         08:01         44:02        2
+## 4       35:20       39:05         07:02         40:01        2
+## 5       15:03       45:01         08:01         57:01        2
+## 6       14:02       53:01         07:02         27:05        2</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-1" tabindex="-1"></a><span class="co"># kies mismach b</span></span>
+<span id="cb38-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-2" tabindex="-1"></a>re_EvalAlleleMism_b <span class="ot">&lt;-</span> <span class="fu">rename</span>(re_EvalAlleleMism_b, <span class="at">mism.b =</span> mism_cnt)</span>
+<span id="cb38-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-3" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-4" tabindex="-1"></a><span class="co"># voeg de mismaches</span></span>
+<span id="cb38-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-5" tabindex="-1"></a>HLA_MisMatch_count <span class="ot">&lt;-</span> <span class="fu">c</span>(re_EvalAlleleMism_a<span class="sc">$</span>mism.a, re_EvalAlleleMism_b<span class="sc">$</span>mism.b, re_EvalAlleleMism_c<span class="sc">$</span>mism.c, re_EvalAlleleMism_drb<span class="sc">$</span>mism.drb)</span>
+<span id="cb38-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-6" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-7" tabindex="-1"></a><span class="co"># Matrix maken van de mismatch-gegevens. Hier geef ik ncol=4 aan omdat we vier kolommen hebben.</span></span>
+<span id="cb38-8"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-8" tabindex="-1"></a>HLA_MisMatch_count <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(re_EvalAlleleMism_a<span class="sc">$</span>mism.a, re_EvalAlleleMism_b<span class="sc">$</span>mism.b, </span>
+<span id="cb38-9"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-9" tabindex="-1"></a>                               re_EvalAlleleMism_c<span class="sc">$</span>mism.c, re_EvalAlleleMism_drb<span class="sc">$</span>mism.drb), </span>
+<span id="cb38-10"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-10" tabindex="-1"></a>                             <span class="at">ncol=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">FALSE</span>)</span>
+<span id="cb38-11"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-12" tabindex="-1"></a><span class="co"># De matrix omzetten naar een data frame (optioneel)</span></span>
+<span id="cb38-13"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-13" tabindex="-1"></a>df_HLA_MisMatch_count <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(HLA_MisMatch_count)</span>
+<span id="cb38-14"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-14" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-15" tabindex="-1"></a><span class="co"># Kolomnamen instellen</span></span>
+<span id="cb38-16"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-16" tabindex="-1"></a><span class="fu">colnames</span>(df_HLA_MisMatch_count) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mism.a&quot;</span>, <span class="st">&quot;mism.b&quot;</span>, <span class="st">&quot;mism.c&quot;</span>, <span class="st">&quot;mism.drb&quot;</span>)</span>
+<span id="cb38-17"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-17" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-18" tabindex="-1"></a><span class="co"># Resultaat bekijken</span></span>
+<span id="cb38-19"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb38-19" tabindex="-1"></a><span class="fu">head</span>(df_HLA_MisMatch_count)</span></code></pre></div>
+<pre><code>##   mism.a mism.b mism.c mism.drb
+## 1      1      2      2        0
+## 2      2      1      0        1
+## 3      2      2      2        1
+## 4      2      2      1        0
+## 5      2      2      2        0
+## 6      2      2      2        0</code></pre>
+<p>mism_cnt = 1: Aantal mismatches tussen dit donor-ontvanger paar.</p>
+<p>Deze output kan worden gebruikt om te beoordelen hoe compatibel donoren en ontvangers zijn op basis van HLA-allel-identiteit en -mismatches, wat cruciale informatie is in transplantatiegeneeskunde om afstoting te minimaliseren en het succes van transplantaties te verbeteren.</p>
+</div>
+<div id="count-hla-mismatch-at-the-allele-level" class="section level2 hasAnchor" number="4.15">
+<h2><span class="header-section-number">4.15</span> Count HLA mismatch at the allele level<a href="human-leukocyte-antigens-tools-in-r-hlar.html#count-hla-mismatch-at-the-allele-level" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="countallelemism" class="section level2 hasAnchor" number="4.16">
+<h2><span class="header-section-number">4.16</span> CountAlleleMism<a href="human-leukocyte-antigens-tools-in-r-hlar.html#countallelemism" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Is ontworpen om het aantal allel-mismatches tussen twee sets van HLA-allelen te tellen.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-1" tabindex="-1"></a><span class="do">### CountAlleleMism </span></span>
+<span id="cb40-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-2" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-3" tabindex="-1"></a>classI <span class="ot">&lt;-</span> <span class="fu">CountAlleleMism</span>(df_HLA_MisMatch_count, <span class="fu">c</span>(<span class="st">&quot;mism.a&quot;</span>, <span class="st">&quot;mism.b&quot;</span>))</span>
+<span id="cb40-4"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-4" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-5" tabindex="-1"></a>classII <span class="ot">&lt;-</span> <span class="fu">CountAlleleMism</span>(df_HLA_MisMatch_count, <span class="fu">c</span>(<span class="st">&quot;mism.c&quot;</span>, <span class="st">&quot;mism.drb&quot;</span>))</span>
+<span id="cb40-6"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-6" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb40-7" tabindex="-1"></a><span class="fu">head</span>(classI)</span></code></pre></div>
+<pre><code>##   mism.a mism.b mism_total
+## 1      1      2          2
+## 2      2      1          1
+## 3      2      2          2
+## 4      2      2          2
+## 5      2      2          2
+## 6      2      2          2</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb42-1" tabindex="-1"></a><span class="fu">head</span>(classII)</span></code></pre></div>
+<pre><code>##   mism.a mism.c mism.drb mism_total
+## 1      1      2        0          2
+## 2      2      0        1          1
+## 3      2      2        1          3
+## 4      2      1        0          1
+## 5      2      2        0          2
+## 6      2      2        0          2</code></pre>
+</div>
+<div id="imputehaplo" class="section level2 hasAnchor" number="4.17">
+<h2><span class="header-section-number">4.17</span> ImputeHaplo<a href="human-leukocyte-antigens-tools-in-r-hlar.html#imputehaplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Wijs HLA-typering (Human Leukocyte Antigen) met lage of gemengde resolutie toe aan de meest waarschijnlijke hoge resolutie gelijkwaardig. Imputatie is rekenintensief, dus grote datasets kunnen vertragingen oplopen bij de verwerking. Deze functie maakt gebruik van gegevens van het NMDP (National Marrow Donor Program), en
+is momenteel beperkt tot HLA A-, B-, C- en DRB-loci.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb44-1" tabindex="-1"></a><span class="do">### ImputeHaplo </span></span>
+<span id="cb44-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb44-2" tabindex="-1"></a>dat_imput <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;doc/hla_bestanden/Haplotype_test.csv&quot;</span>)</span>
+<span id="cb44-3"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb44-3" tabindex="-1"></a><span class="fu">colnames</span>(dat_imput)</span></code></pre></div>
+<pre><code>##  [1] &quot;pair_id&quot;      &quot;ethnicity&quot;    &quot;subject_type&quot; &quot;a1&quot;           &quot;a2&quot;          
+##  [6] &quot;b1&quot;           &quot;b2&quot;           &quot;c1&quot;           &quot;c2&quot;           &quot;drb1&quot;        
+## [11] &quot;drb2&quot;         &quot;dqb1&quot;         &quot;dqb2&quot;         &quot;drb31&quot;        &quot;drb32&quot;       
+## [16] &quot;drb41&quot;        &quot;drb42&quot;        &quot;drb51&quot;        &quot;drb52&quot;</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb46-1" tabindex="-1"></a><span class="co"># Nu ImputeHaplo functie toepassen</span></span>
+<span id="cb46-2"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb46-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ImputeHaplo</span>(<span class="at">dat_in =</span> dat_imput)</span></code></pre></div>
+<pre><code>## Warning in ImputeHaplo(dat_in = dat_imput): 
+## Please use this imputation function with caution; its accuracy is lower than the current publicly available gold standard (HaploStats) and may produce inaccurate results.
+## Work is underway on a collaboration to improve the accuracy of this function.</code></pre>
+<pre><code>##   |                                                                              |                                                                      |   0%  |                                                                              |====                                                                  |   5%  |                                                                              |=======                                                               |  10%  |                                                                              |==========                                                            |  15%  |                                                                              |==============                                                        |  20%  |                                                                              |==================                                                    |  25%  |                                                                              |=====================                                                 |  30%  |                                                                              |========================                                              |  35%  |                                                                              |============================                                          |  40%  |                                                                              |================================                                      |  45%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================                                |  55%  |                                                                              |==========================================                            |  60%  |                                                                              |==============================================                        |  65%  |                                                                              |=================================================                     |  70%  |                                                                              |====================================================                  |  75%  |                                                                              |========================================================              |  80%  |                                                                              |============================================================          |  85%  |                                                                              |===============================================================       |  90%  |                                                                              |==================================================================    |  95%  |                                                                              |======================================================================| 100%</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="human-leukocyte-antigens-tools-in-r-hlar.html#cb49-1" tabindex="-1"></a><span class="fu">head</span>(result)</span></code></pre></div>
+<pre><code>##           subj dat_type pair_id     a     b     c  drb1  dqb1        drb345
+## 1 101_rcpt_cau      raw     101 02/03 07/49 07/07 11/15 03/06         /////
+## 2 101_rcpt_cau  imputed     101 03:01 07:02 07:02 15:01 06:02    DRB5*01:01
+## 3 101_rcpt_cau  imputed     101 02:01 49:01 07:01 11:01 03:01    DRB3*02:02
+## 4  101_don_cau      raw     101 01/02 08/15 03/07 03/04 20/03 01/01/10/10//
+## 5  101_don_cau  imputed     101 02:01 15:01 03:04 04:01 03:02    DRB4*01:01
+## 6  101_don_cau  imputed     101 01:01 08:01 07:01 03:01 03:02    DRB3*01:01
+##     freq rank lores_all_match
+## 1                            
+## 2 0.0297    2             yes
+## 3  3e-04  437             yes
+## 4                            
+## 5 0.0084    7              no
+## 6  1e-04 8054              no</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="vooruit-kijken.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="de-organisatie-van-daur2-cursus-bestanden-met-het-guerrilla-analytics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04_HLAR.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
