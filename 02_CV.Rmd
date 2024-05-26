@@ -1,4 +1,0 @@
-# CV
-```{r CV, echo=F, out.width="100%", out.height=1000}
-knitr::include_graphics("MarianaCV.pdf")
-```
