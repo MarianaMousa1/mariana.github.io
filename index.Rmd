@@ -1,0 +1,13 @@
+--- 
+title: "Portofolio"
+author: "Mariana mousa"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+bibliography: bibliography.bib
+---
+
+# Portfolio Introductie
+
+Welkom bij mijn portfolio! Mijn naam is Mariana Mousa en dit portfolio dient als een verzameling van mijn werk en projecten op het gebied van data-analyse en wetenschappelijk onderzoek. Als student life sciences heb ik mij gericht op het verkennen en analyseren van biologische gegevens om inzichten te genereren die impactvol zijn.# Overzicht van mijn Werk
+Mijn portfolio omvat een breed scala aan projecten en opdrachten, variërend van academische onderzoeksprojecten tot praktische data-analyse en visualisatie. Elk project is ontworpen om mijn vaardigheden en expertise op het gebied van data-analyse, programmeervaardigheden en probleemoplossend vermogen te demonstreren.
+

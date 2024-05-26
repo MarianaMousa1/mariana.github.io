@@ -1,0 +1,45 @@
+%0 Journal Article
+%T Global antibiotic consumption 2000 to 2010: an analysis of national pharmaceutical sales data
+%V 14
+%N 8
+%P 742-750
+%U https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(14)70780-7/abstract
+%G English
+%J The Lancet Infectious Diseases
+%A Boeckel, Thomas P. Van
+%A Gandra, Sumanth
+%A Ashok, Ashvin
+%A Caudron, Quentin
+%A Grenfell, Bryan T.
+%A Levin, Simon A.
+%A Laxminarayan, Ramanan
+%D 2014-08-01
+
+%0 Journal Article
+%T The Antibiotic Resistance Crisis
+%V 40
+%N 4
+%P 277-283
+%U https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4378521/
+%X Decades after the first patients were treated with antibiotics, bacterial infections have again become a threat because of the rapid emergence of resistant bacteria—a crisis attributed to abuse of these medications and a lack of new drug development.
+%J Pharmacy and Therapeutics
+%A Ventola, C. Lee
+%D 2015-4
+
+%0 Journal Article
+%T The antibiotic resistance crisis: part 1: causes and threats
+%V 40
+%N 4
+%P 277-283
+%X Decades after the first patients were treated with antibiotics, bacterial infections have again become a threat because of the rapid emergence of resistant bacteria-a crisis attributed to abuse of these medications and a lack of new drug development.
+%G eng
+%J P & T: A Peer-Reviewed Journal for Formulary Management
+%A Ventola, C. Lee
+%D 2015-04
+
+%0 Web Page
+%T Tackling drug-resistant infections globally : final report and recommendations / the Review on Antimicrobial Resistance chaired by Jim O'Neill.
+%U https://wellcomecollection.org/works/thvwsuba/items
+%G en
+%B Wellcome Collection
+
