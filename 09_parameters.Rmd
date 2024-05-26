@@ -111,12 +111,12 @@ cat("*Figure 1: COVID-19 sterfgevallen in Germany in maand mei 2021*")
 
 ## Dit is een beeld van de html bestand van de originele parameters rmarkdown bestand waarbij de county aangepast naar Netherlands, month 4 (april) en jaar 2022.
 
-```{r}
+```{r, eval=FALSE}
 webshot::install_phantomjs()
 webshot::webshot("doc/parameters_bestanden/parameters1.html")
 ```
 
-
+![webshot](images/webshot.png)
 
 
 
