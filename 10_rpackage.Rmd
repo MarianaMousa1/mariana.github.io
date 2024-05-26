@@ -45,3 +45,8 @@ functie plot_ab_resis toepassen
 plot_ab_resis(amr_data)
 ```
 
+
+![AMRplot](images/AMR_plot.png)
+
+
+
