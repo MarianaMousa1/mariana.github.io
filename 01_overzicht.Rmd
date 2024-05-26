@@ -1,0 +1,46 @@
+# Portfolio Introductie
+
+Welkom bij mijn portfolio! Mijn naam is Mariana Mousa en dit portfolio dient als een verzameling van mijn werk en projecten op het gebied van data-analyse en wetenschappelijk onderzoek. Als student life sciences heb ik mij gericht op het verkennen en analyseren van biologische gegevens om inzichten te genereren die impactvol zijn.# Overzicht van mijn Werk
+Mijn portfolio omvat een breed scala aan projecten en opdrachten, variërend van academische onderzoeksprojecten tot praktische data-analyse en visualisatie. Elk project is ontworpen om mijn vaardigheden en expertise op het gebied van data-analyse, programmeervaardigheden en probleemoplossend vermogen te demonstreren.
+
+Structuur van het Portfolio
+Dit portfolio is opgedeeld in verschillende secties, elk met een specifiek project of thema:
+
+02_CV
+In dit onderdeel presenteer ik mijn curriculum vitae, waarin mijn academische en professionele achtergrond, vaardigheden en ervaringen zijn samengevat. Dit document biedt een overzicht van mijn kwalificaties en prestaties.
+
+03_vooruitkijken
+Hier beschrijf ik mijn toekomstvisie en doelen. Ik reflecteer op mijn huidige vaardigheden en ervaring en identificeer gebieden waar ik verder in wil groeien. Dit onderdeel toont mijn ambitie en plan voor professionele ontwikkeling.
+
+04_HLAR
+Dit project richt zich op Human leukocyte antigens tools in R (hlar). hlaR tools
+Is een package met verschillende functies voor eplet-analyse van HLA (humaan leukocytenantigeen) mismatches tussen donor en ontvanger. De data die in dit opdracht wordt gebruikt is van is geiïmporteerd van Allele Frequency Net Database geimporteerd.
+
+05_Gruerrilla_analytics
+In dit onderdeel laat ik De organisatie van DAUR2 bestand met het guerrilla-analytics.
+
+06_C_elegans_plaatexperiment
+Dit project beschrijft een experiment met de nematode C. elegans. Ik heb de experimentele opzet, dataverzameling en analyse gedocumenteerd. In dit experiment werden de volwassen C.elegans nematoden blootgesteld aan variërende concentraties van verschillende verbindingen.
+
+07_1_reproducibility & 07_2_reproducibility
+In deze twee onderdelen focus ik op de reproduceerbaarheid van wetenschappelijk onderzoek. Ik bespreek de reproducibility van twee verschillende wetenschappelijke artiklen. .
+
+08_SQL
+Dit onderdeel bevat mijn werk met SQL voor het beheren en analyseren van relationele databases. Ik presenteer verschillende queries en analyses die ik heb uitgevoerd om inzicht te krijgen in complexe datasets.
+
+09_parameters
+Hier richt ik mij op het gebruik van parameterisatie in data-analyse. Ik demonstreer hoe parameters kunnen worden gebruikt om flexibele en herbruikbare analyses te maken, met praktische voorbeelden en toepassingen.
+
+10_rpackage
+In dit onderdeel introduceer ik mijn eigen ontwikkelde R-pakket, genaamd AMRnetherland. Dit pakket biedt functies en hulpmiddelen voor de analyse van antibioticaresistentie. Ik bespreek de functionaliteiten en hoe het bijdraagt aan mijn onderzoekswerk.
+
+11_referenties
+Dit onderdeel bevat de referenties en bronnen die ik heb gebruikt bij het uitvoeren van mijn projecticum. Het biedt een overzicht van de literatuur die mijn werk ondersteunen.
+
+Gebruikte Referenties
+Bij het samenstellen van mijn portfolio heb ik gebruik gemaakt van een verscheidenheid aan bronnen, waaronder wetenschappelijke artikelen, online bronnen en praktische handleidingen. Deze referenties zijn opgenomen in de bibliografie aan het einde van deze introductie.
+
+Toekomstige Ontwikkelingen
+Als toekomstig doel streef ik ernaar om mijn portfolio uit te breiden met meer geavanceerde projecten en innovatieve analyses. Ik ben voortdurend bezig met het verbeteren van mijn vaardigheden en het verkennen van nieuwe technologieën binnen het domein van data-analyse.
+
+Ik nodig je uit om mijn portfolio te verkennen en meer te leren over mijn werk en passie voor data-analyse. Mocht je vragen hebben of willen samenwerken, neem dan gerust contact met me op. Veel leesplezier!

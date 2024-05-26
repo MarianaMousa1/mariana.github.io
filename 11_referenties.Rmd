@@ -1,0 +1,28 @@
+
+# Introductie naar project AMR
+
+Antimicrobiële middelen, zoals antibiotica, zijn stoffen die worden ingezet om de groei of levensvatbaarheid van micro-organismen te onderdrukken of te vernietigen. Het vermogen van micro-organismen, zoals bacteriën, om te overleven en te groeien in aanwezigheid van antimicrobiële middelen, staat bekend als antimicrobiële resistentie (AMR). Hierbij ontwikkelen micro-organismen weerstand tegen medicijnen die zijn ontworpen om ze te doden of hun groei te remmen. AMR ontstaat wanneer micro-organismen niet meer reageren op antimicrobiële middelen, waardoor infecties moeilijk of onmogelijk te behandelen zijn. Dit probleem wordt vooral veroorzaakt door verkeerd en overmatig gebruik van antimicrobiële middelen bij mensen, dieren en planten. AMR vormt een ernstige bedreiging voor de wereldwijde gezondheid en ontwikkeling en brengt miljoenen levens in gevaar. Het treft landen over de hele wereld en ondermijnt de effectiviteit van moderne geneeskunde, waardoor infecties moeilijker te behandelen zijn en medische procedures risicovoller worden.
+
+Het oneigenlijke en overmatige gebruik van antibiotica in zowel de geneeskunde als de landbouw zijn de belangrijkste drijfveren van AMR (O’Neill, 2016). Het begrijpen van de geografische verspreiding en determinanten van AMR is cruciaal voor het ontwikkelen van gerichte interventies en beleidsmaatregelen om de impact ervan te beperken (Ventola, 2015). Eerdere studies hebben aangetoond dat regionale verschillen in gezondheidszorgpraktijken en antibioticagebruik kunnen leiden tot variërende resistentiecijfers (Van Boeckel et al., 2014).
+
+## Doelstellingen
+Het hoofddoel van ons onderzoek is om de Shiny App voor het typeren en visualiseren van bacteriële plasmiden verder te ontwikkelen en te verfijnen door extra epidemiologische gegevens toe te voegen, zoals informatie over de isolatiedatum, geografische locatie, de mogelijkheid om eigen fasta/plasmiden toe te voegen en te vergelijken met de database (metadata.txt), en het optimaliseren voor eenvoudig uploaden. We zullen ook patiënt metadata integreren. Van de opdrachtgever Gijs Teunis moet deze applicatie verbeterd en uitgebreid worden.
+1. **Geografische Verspreiding**: Het in kaart brengen van de verspreiding van AMR in Nederland.
+2. **Resistente Bacteriën**: Het identificeren van veelvoorkomende antibioticumresistente bacteriën.
+3. **Trend Analyse**: Het onderzoeken van veranderingen in antibioticaresistentie in de loop der tijd.
+
+## Methodologie
+
+Gegevens zijn verzameld uit het RIVM: Rijksinstituut voor Volksgezondheid en Milieu.
+Ook willen we gebruikersvriendelijke functies toevoegen waarmee gebruikers isolaten kunnen toevoegen en vergelijken met onze dataset.
+
+### Belang
+
+Dit project streeft ernaar het begrip van de dynamiek van AMR in Nederland te vergroten en gegevens te leveren die volksgezondheidsautoriteiten helpen bij het ontwikkelen van effectieve strategieën om antimicrobiële resistentie te bestrijden.
+
+Antimicrobiële resistentie (AMR) is een groeiend wereldwijd gezondheidsprobleem dat de effectiviteit van behandelingen voor infectieziekten bedreigt [@vanboeckel2014]. Het oneigenlijke en overmatige gebruik van antibiotica in zowel de geneeskunde als de landbouw zijn de belangrijkste drijfveren van AMR [@ventola2015a]. Het begrijpen van de geografische verspreiding en determinanten van AMR is cruciaal voor het ontwikkelen van gerichte interventies [@vanboeckel2014]. [@ventola2015b]
+
+## Referenties
+- Aanvullende referenties uit Zotero...
+
+
