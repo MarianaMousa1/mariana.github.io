@@ -54,6 +54,7 @@ introductie
 load-de-data
 data-filteren-en-gegevens-voorbereiden
 plotten-maken-voor-covid-19-gevallen-en-sterfgevallen.
+dit-is-een-beeld-van-de-html-bestand-van-de-originele-parameters-rmarkdown-bestand-waarbij-de-county-aangepast-naar-netherlands-month-4-april-en-jaar-2022.
 rpackage-amrnetherland
 introductie-naar-project-amr
 doelstellingen

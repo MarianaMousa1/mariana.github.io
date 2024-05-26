@@ -160,7 +160,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Portofolio</a></li>
+<li><a href="./"> Data science voor biology Portofolio</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Portfolio Introductie</a></li>
@@ -232,6 +232,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#load-de-data"><i class="fa fa-check"></i><b>11.2</b> load de data</a></li>
 <li class="chapter" data-level="11.3" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#data-filteren-en-gegevens-voorbereiden"><i class="fa fa-check"></i><b>11.3</b> Data filteren en gegevens voorbereiden</a></li>
 <li class="chapter" data-level="11.4" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#plotten-maken-voor-covid-19-gevallen-en-sterfgevallen."><i class="fa fa-check"></i><b>11.4</b> Plotten maken voor COVID-19-gevallen en sterfgevallen.</a></li>
+<li class="chapter" data-level="11.5" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#dit-is-een-beeld-van-de-html-bestand-van-de-originele-parameters-rmarkdown-bestand-waarbij-de-county-aangepast-naar-netherlands-month-4-april-en-jaar-2022."><i class="fa fa-check"></i><b>11.5</b> Dit is een beeld van de html bestand van de originele parameters rmarkdown bestand waarbij de county aangepast naar Netherlands, month 4 (april) en jaar 2022.</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="rpackage-amrnetherland.html"><a href="rpackage-amrnetherland.html"><i class="fa fa-check"></i><b>12</b> Rpackage AMRNetherland</a></li>
 <li class="chapter" data-level="13" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html"><i class="fa fa-check"></i><b>13</b> Introductie naar project AMR</a>
@@ -359,7 +360,8 @@ div.csl-indent {
 <span id="cb58-6"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb58-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Het effect van de verschillende stoffen op de hoeveelheid levende C_ elegans&quot;</span>,</span>
 <span id="cb58-7"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb58-7" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;compound concnetratie&quot;</span>, </span>
 <span id="cb58-8"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb58-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;aantal nakomelingen&quot;</span> ))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="images/c_elegans_plot1.png" alt="compound_concnetratie_plot" />
 De compConcentration variable is als character datat bestand, daarom is het handig voor de data visualisatie om naar numeric te veranderen.</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb59-1" tabindex="-1"></a><span class="co"># componCentration van character naar numeric variable</span></span>
 <span id="cb59-2"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb59-2" tabindex="-1"></a></span>
@@ -384,7 +386,8 @@ De compConcentration variable is als character datat bestand, daarom is het hand
 <span id="cb59-21"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb59-21" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;aantal nakomelingen&quot;</span> )</span>
 <span id="cb59-22"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb59-22" tabindex="-1"></a><span class="fu">print</span>(c_elegans_data_grafiek)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" />
-De positieve controle voor dit experiment iEthanol. De negatieve controle voor dit experiment is S-medium.</p>
+<img src="images/c_elegans_plot2.png" alt="compound_concnetratie_normalizedplot2" /></p>
+<p>De positieve controle voor dit experiment iEthanol. De negatieve controle voor dit experiment is S-medium.</p>
 <p>Om erachter te komen of er inderdaad een effect is van verschillende concentraties op het aantal nakomelingen en of de verschillende verbindingen een verschillende curve hebben (IC50) kan de volgende stappenplan uitvoeren:</p>
 <p>1- Data downloaden en tidy maken en het verzamelen van de concentraties van de compounds en het aantal nakomelingen voor elk monster onder elke concentratie.</p>
 <p>2- Normaliteit checken met Shapio-Wilk test.</p>
@@ -416,7 +419,8 @@ IC50_value &lt;- predict(logistic_model, type = “response”, newdata = data.f
 <span id="cb60-19"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb60-19" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">&quot;log10  compound Concentratie&quot;</span>,</span>
 <span id="cb60-20"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb60-20" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Gemiddelde aantal nakomelingen&quot;</span></span>
 <span id="cb60-21"><a href="data-analyse-afgeleid-van-een-experiment-op-volwassen-c.elegans-nematoden.html#cb60-21" tabindex="-1"></a>      )</span></code></pre></div>
-<p><img src="_main_files/figure-html/dAta%20normaliseren%20en%20plotten-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/dAta%20normaliseren%20en%20plotten-1.png" width="672" />
+<img src="images/c_elegans_plot2.png" alt="compound_concnetratie_normalizedplot3" /></p>
 
 </div>
 </div>

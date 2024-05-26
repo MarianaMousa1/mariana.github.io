@@ -160,7 +160,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Portofolio</a></li>
+<li><a href="./"> Data science voor biology Portofolio</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Portfolio Introductie</a></li>
@@ -232,6 +232,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#load-de-data"><i class="fa fa-check"></i><b>11.2</b> load de data</a></li>
 <li class="chapter" data-level="11.3" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#data-filteren-en-gegevens-voorbereiden"><i class="fa fa-check"></i><b>11.3</b> Data filteren en gegevens voorbereiden</a></li>
 <li class="chapter" data-level="11.4" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#plotten-maken-voor-covid-19-gevallen-en-sterfgevallen."><i class="fa fa-check"></i><b>11.4</b> Plotten maken voor COVID-19-gevallen en sterfgevallen.</a></li>
+<li class="chapter" data-level="11.5" data-path="covid-19-report-parametrizing-in-rmarkdown.html"><a href="covid-19-report-parametrizing-in-rmarkdown.html#dit-is-een-beeld-van-de-html-bestand-van-de-originele-parameters-rmarkdown-bestand-waarbij-de-county-aangepast-naar-netherlands-month-4-april-en-jaar-2022."><i class="fa fa-check"></i><b>11.5</b> Dit is een beeld van de html bestand van de originele parameters rmarkdown bestand waarbij de county aangepast naar Netherlands, month 4 (april) en jaar 2022.</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="rpackage-amrnetherland.html"><a href="rpackage-amrnetherland.html"><i class="fa fa-check"></i><b>12</b> Rpackage AMRNetherland</a></li>
 <li class="chapter" data-level="13" data-path="introductie-naar-project-amr.html"><a href="introductie-naar-project-amr.html"><i class="fa fa-check"></i><b>13</b> Introductie naar project AMR</a>
@@ -268,7 +269,7 @@ div.csl-indent {
 <h2><span class="header-section-number">11.1</span> Introductie<a href="covid-19-report-parametrizing-in-rmarkdown.html#introductie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Dit rapport biedt een analyse van COVID-19-gevallen en sterfgevallen voor een bepaald land en jaar. Het rapport is geparametriseerd om flexibiliteit mogelijk te maken bij het selecteren van het land, het jaar en de maanden waarin u geïnteresseerd bent.
 De data is gedownload van European Center for Disease Control (ECDC).</p>
-<p>De originele RMarkdown bestand waar de parameters ingesteld is bewaard in mijn portofolio repository <a href="https://github.com/MarianaMousa1/portofolio.git">link naar repo</a></p>
+<p>De originele RMarkdown bestand waar de parameters ingesteld is bewaard in mijn portofolio repository <a href="https://github.com/MarianaMousa1/MarianaPortofolio">link naar repo</a></p>
 </div>
 <div id="load-de-data" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">11.2</span> load de data<a href="covid-19-report-parametrizing-in-rmarkdown.html#load-de-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -346,6 +347,12 @@ De data is gedownload van European Center for Disease Control (ECDC).</p>
 <p><img src="images/parameters_COVID_deathes_Germany.png" width="534" /></p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb119-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;*Figure 1: COVID-19 sterfgevallen in Germany in maand mei 2021*&quot;</span>)</span></code></pre></div>
 <pre><code>## *Figure 1: COVID-19 sterfgevallen in Germany in maand mei 2021*</code></pre>
+</div>
+<div id="dit-is-een-beeld-van-de-html-bestand-van-de-originele-parameters-rmarkdown-bestand-waarbij-de-county-aangepast-naar-netherlands-month-4-april-en-jaar-2022." class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Dit is een beeld van de html bestand van de originele parameters rmarkdown bestand waarbij de county aangepast naar Netherlands, month 4 (april) en jaar 2022.<a href="covid-19-report-parametrizing-in-rmarkdown.html#dit-is-een-beeld-van-de-html-bestand-van-de-originele-parameters-rmarkdown-bestand-waarbij-de-county-aangepast-naar-netherlands-month-4-april-en-jaar-2022." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb121-1" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span>
+<span id="cb121-2"><a href="covid-19-report-parametrizing-in-rmarkdown.html#cb121-2" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;doc/parameters_bestanden/parameters1.html&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 
 </div>
 </div>

@@ -10,3 +10,12 @@
 
 * De volgende vaardigheid die ik graag zou willen leren naast leiderschapsvaardigheid, is het uitvoeren van NGS-analyses en het beheersen van HLA-typing R-tools om de genetische variaties te bestuderen die verband houden met ziekten, zoals kanker, auto-immuunziekten en genetische aandoeningen. Dit kan leiden tot een dieper inzicht in de oorzaken van ziekten en nieuwe behandelingsmogelijkheden. 
 
+* De dag indeling voor het leren van hlar tools:
+Dag 1: Data zoeken en Data cleaning and allele level analysis
+
+Dag 2: IAllele clean and mis-match (functies: CleanAllele, valAlleleMism)
+
+Dag 3: Eplet mismatch (functies: CalEpletMHCI, CalEpletMHCII, imputation)
+
+Dag 4: other functionalities (functies: count of mis-match, CalAlleleTopN, CalAlleleMismFreq )
+

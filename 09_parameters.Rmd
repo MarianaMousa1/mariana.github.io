@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Dit rapport biedt een analyse van COVID-19-gevallen en sterfgevallen voor een bepaald land en jaar. Het rapport is geparametriseerd om flexibiliteit mogelijk te maken bij het selecteren van het land, het jaar en de maanden waarin u geïnteresseerd bent.
 De data is gedownload van European Center for Disease Control (ECDC).
 
-De originele RMarkdown bestand waar de parameters ingesteld is bewaard in mijn portofolio repository [link naar repo](https://github.com/MarianaMousa1/portofolio.git)
+De originele RMarkdown bestand waar de parameters ingesteld is bewaard in mijn portofolio repository [link naar repo](https://github.com/MarianaMousa1/MarianaPortofolio)
 
 ## load de data 
 Eerst laden de benodigde libraries en de dataset.
@@ -109,6 +109,12 @@ cat("*Figure 1: COVID-19 sterfgevallen in Germany in maand mei 2021*")
 ```
 
 
+## Dit is een beeld van de html bestand van de originele parameters rmarkdown bestand waarbij de county aangepast naar Netherlands, month 4 (april) en jaar 2022.
+
+```{r}
+webshot::install_phantomjs()
+webshot::webshot("doc/parameters_bestanden/parameters1.html")
+```
 
 
 

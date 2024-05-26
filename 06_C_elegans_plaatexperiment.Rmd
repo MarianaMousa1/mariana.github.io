@@ -42,6 +42,8 @@ ggplot(data = c_elegans_data,
          x = "compound concnetratie", 
        y = "aantal nakomelingen" ))
 ```
+
+![compound_concnetratie_plot](images/c_elegans_plot1.png)
 De compConcentration variable is als character datat bestand, daarom is het handig voor de data visualisatie om naar numeric te veranderen.
 
 ```{r, warning=FALSE, message=FALSE}
@@ -69,6 +71,8 @@ c_elegans_data_grafiek <-
 print(c_elegans_data_grafiek)
 
 ```
+![compound_concnetratie_normalizedplot2](images/c_elegans_plot2.png)
+
 De positieve controle voor dit experiment iEthanol. De negatieve controle voor dit experiment is S-medium.
 
 Om erachter te komen of er inderdaad een effect is van verschillende concentraties op het aantal nakomelingen en of de verschillende verbindingen een verschillende curve hebben (IC50) kan de volgende stappenplan uitvoeren:
@@ -111,3 +115,4 @@ ggplot(data = data_normalizeren, aes(x = log10(compConcentration), y = RawData_n
        y = "Gemiddelde aantal nakomelingen"
       )
 ```
+![compound_concnetratie_normalizedplot3](images/c_elegans_plot2.png)
